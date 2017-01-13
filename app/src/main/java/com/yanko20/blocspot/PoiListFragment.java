@@ -13,6 +13,7 @@ import android.widget.SimpleAdapter;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.StringTokenizer;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -28,7 +29,15 @@ public class PoiListFragment extends ListFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        ArrayAdapter adapter = new ArrayAdapter(getContext(), R.layout.poi_list_item);
+        ArrayList<String> objects = new ArrayList<>();
+        objects.add("a");
+        objects.add("b");
+        objects.add("c");
+        ArrayAdapter adapter = new ArrayAdapter(
+                getContext(),
+                R.layout.poi_list_item,
+                R.id.poi_item_text,
+                objects);
         setListAdapter(adapter);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_list, container, false);
