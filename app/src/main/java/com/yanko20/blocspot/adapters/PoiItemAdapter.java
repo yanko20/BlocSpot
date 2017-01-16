@@ -8,8 +8,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yanko20.blocspot.R;
+import com.yanko20.blocspot.model.PointOfInterest;
 
 import java.util.ArrayList;
+
+import io.realm.RealmResults;
 
 /**
  * Created by yanko on 1/13/2017.
@@ -17,9 +20,9 @@ import java.util.ArrayList;
 
 public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemViewHolder>{
 
-    private ArrayList<String> dataSet;
+    private RealmResults<PointOfInterest> dataSet;
 
-    public PoiItemAdapter(ArrayList<String> dataSet){
+    public PoiItemAdapter(RealmResults<PointOfInterest> dataSet){
         this.dataSet = dataSet;
     }
 
@@ -41,7 +44,9 @@ public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemV
 
     @Override
     public void onBindViewHolder(PoiItemViewHolder holder, int position) {
-        holder.textView.setText(dataSet.get(position));
+        PointOfInterest poi = dataSet.get(position);
+        holder.title.setText(poi.getTitle());
+        holder.description.setText(poi.getDescription());
     }
 
     @Override
@@ -51,11 +56,13 @@ public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemV
 
     public class PoiItemViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView textView;
+        public TextView title;
+        public TextView description;
 
         public PoiItemViewHolder(View itemView) {
             super(itemView);
-            textView = (TextView) itemView.findViewById(R.id.poi_item_text);
+            title = (TextView) itemView.findViewById(R.id.poi_item_title);
+            description = (TextView) itemView.findViewById(R.id.poi_item_description);
         }
 
     }

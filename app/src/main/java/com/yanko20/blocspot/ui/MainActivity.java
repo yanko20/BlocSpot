@@ -16,44 +16,20 @@ import io.realm.Realm;
 
 public class MainActivity extends AppCompatActivity {
 
-    private Database db;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        // ui
         setContentView(R.layout.activity_main);
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setAdapter(new PoiFragmentPageAdapter(getSupportFragmentManager()));
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
-
-        // data
-        PointOfInterest poiMachPichu = new PointOfInterest();
-        poiMachPichu.setId(UUID.randomUUID().toString());
-        poiMachPichu.setTitle("Machu Picchu");
-        poiMachPichu.setDescription("This is not Kremlin, this is Machu Picchu!");
-        poiMachPichu.setLat(-13.163141);
-        poiMachPichu.setLng(-72.544963);
-
-        PointOfInterest poiKremlin = new PointOfInterest();
-        poiKremlin.setId(UUID.randomUUID().toString());
-        poiKremlin.setTitle("Kremlin");
-        poiKremlin.setDescription("This is Kremlin!");
-        poiKremlin.setLat(55.752023);
-        poiKremlin.setLng(37.617499);
-
-        // database
-        db = new Database(getApplicationContext());
-        db.savePoi(poiMachPichu);
-        db.savePoi(poiKremlin);
-        db.queryData();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        db.getRealmObj().close();
     }
 }

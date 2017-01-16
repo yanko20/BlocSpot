@@ -4,6 +4,7 @@ import android.content.Context;
 import android.provider.ContactsContract;
 import android.util.Log;
 
+import com.yanko20.blocspot.BlocSpotApplication;
 import com.yanko20.blocspot.model.PointOfInterest;
 
 import java.util.UUID;
@@ -23,10 +24,19 @@ public class Database {
     public String TAG;
     private Realm realmObj;
 
-    public Database(Context context){
+    private static Database instance = null;
+
+    private Database(){
         TAG = "realmtag";
-        Realm.init(context);
+        Realm.init(BlocSpotApplication.getInstance());
         realmObj = Realm.getDefaultInstance();
+    }
+
+    public static Database getInstance(){
+        if(instance == null){
+            instance = new Database();
+        }
+        return instance;
     }
 
     public void savePoi(PointOfInterest poi){
@@ -42,6 +52,13 @@ public class Database {
         for(PointOfInterest resultPoi : results){
             Log.d(TAG, resultPoi.toString());
         }
+    }
+
+    public RealmResults<PointOfInterest> getAllData(){
+        RealmResults<PointOfInterest> results = realmObj
+                .where(PointOfInterest.class)
+                .findAll();
+        return results;
     }
 
     public Realm getRealmObj() {
