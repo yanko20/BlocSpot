@@ -11,16 +11,14 @@ import io.realm.RealmConfiguration;
 
 public class BlocSpotApplication extends Application {
 
-    private static BlocSpotApplication instance;
-
-    public static BlocSpotApplication getInstance(){
-        return instance;
-    }
-
     @Override
     public void onCreate() {
         super.onCreate();
-        instance = this;
+        setupRealm();
+    }
+
+    private void setupRealm(){
+        Realm.init(this);
         RealmConfiguration realmConfiguration =
                 new RealmConfiguration.Builder().name("blocspot.realm").build();
         Realm.deleteRealm(realmConfiguration);

@@ -14,6 +14,7 @@ import com.yanko20.blocspot.database.Database;
 import com.yanko20.blocspot.model.PointOfInterest;
 import java.util.UUID;
 
+import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**

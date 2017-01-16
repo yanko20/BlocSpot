@@ -28,7 +28,6 @@ public class Database {
 
     private Database(){
         TAG = "realmtag";
-        Realm.init(BlocSpotApplication.getInstance());
         realmObj = Realm.getDefaultInstance();
     }
 
