@@ -53,7 +53,7 @@ public class Database {
         }
     }
 
-    public RealmResults<PointOfInterest> getAllData(){
+    public RealmResults<PointOfInterest> getPoiList(){
         RealmResults<PointOfInterest> results = realmObj
                 .where(PointOfInterest.class)
                 .findAll();

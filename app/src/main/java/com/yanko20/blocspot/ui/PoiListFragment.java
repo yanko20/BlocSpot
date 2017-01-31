@@ -14,7 +14,6 @@ import com.yanko20.blocspot.database.Database;
 import com.yanko20.blocspot.model.PointOfInterest;
 import java.util.UUID;
 
-import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
@@ -36,7 +35,7 @@ public class PoiListFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         dataSetup();
-        RealmResults<PointOfInterest> dataSet = Database.getInstance().getAllData();
+        RealmResults<PointOfInterest> dataSet = Database.getInstance().getPoiList();
         adapter = new PoiItemAdapter(dataSet);
         recyclerView.setAdapter(adapter);
         return v;
