@@ -70,7 +70,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="847035f5a92d84e7209c63be9df81b07aa7231f3">
+        sha1="1dd2ee8361942a9b347c77e425ee705fd5cad9d9">
         <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_a3543d405de145306874b41d87456e2e71bbbd82\classes.dex" />
     </item>
     <item
@@ -610,7 +610,7 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
-        sha1="febb2d3792a204471e7f9b482c5366b868da8c1d">
+        sha1="68d480325c96a197d0acb3c5bc717ce501e4dfb1">
         <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ee064cc5e13e3fb749ea9e383830a9f19d3292f1\classes.dex" />
     </item>
     <item
