@@ -6,13 +6,11 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.PoiFragmentPageAdapter;
-import com.yanko20.blocspot.geo.GoogleApiImplementation;
 
-public class MainActivity extends AppCompatActivity{
+public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

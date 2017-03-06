@@ -70,8 +70,13 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
+<<<<<<< HEAD
         sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
         <dex dex="C:\development\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_72844738038f5f55177ad1cfae86cc6e4189f6ac\classes.dex" />
+=======
+        sha1="8f80cee8e11c69abba3a3d54b900db846992f0b3">
+        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_a3543d405de145306874b41d87456e2e71bbbd82\classes.dex" />
+>>>>>>> 40789fed3554610ca47f3d8189f91d30d5b40a72
     </item>
     <item
         is-multidex="true"
@@ -610,8 +615,13 @@
         jumboMode="true"
         optimize="true"
         revision="25.0.1"
+<<<<<<< HEAD
         sha1="06aa634c33b2e66951ae46d45806d8b16d2c1bfc">
         <dex dex="C:\development\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_7c16cc1a6de532fd66af3eb5ba33d0d776deb8a3\classes.dex" />
+=======
+        sha1="3f7f0d72bee05129dd6203208e0201a95db01a82">
+        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ee064cc5e13e3fb749ea9e383830a9f19d3292f1\classes.dex" />
+>>>>>>> 40789fed3554610ca47f3d8189f91d30d5b40a72
     </item>
     <item
         is-multidex="true"
