@@ -20,11 +20,11 @@ import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
@@ -53,6 +53,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     // This number in extremely low, and should be used only for debug
     private final int UPDATE_INTERVAL = 1000;
     private final int FASTEST_INTERVAL = 900;
+    private static boolean isCenteredToCurrentLocation = false;
 
 
     private static GoogleMap map;
@@ -140,30 +141,28 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
         Log.w(BlocSpotApp.TAG, "permissionsDenied()");
     }
 
-    public static void mapAndLocationReady(GoogleMap map, Location location) {
+    public void mapAndLocationReady(GoogleMap map, Location location) {
         if (map != null && location != null) {
-            markerLocation(map, location);
+                if(checkPermission()){
+                    map.setMyLocationEnabled(true);
+                    centerToCurrentLocation();
+                }
         }
     }
 
-
-    // Create a Location Marker
-    private static void markerLocation(GoogleMap map, Location location) {
-        String title = location.getLatitude() + ", " + location.getLongitude();
-        Log.i(BlocSpotApp.TAG, "markerLocation(" + title + ")");
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-        MarkerOptions markerOptions = new MarkerOptions()
-                .position(latLng)
-                .title(title);
-        // Remove the anterior marker
-        if (locationMarker != null)
-            locationMarker.remove();
-        locationMarker = map.addMarker(markerOptions);
-        float zoom = 14f;
-        CameraUpdate cameraUpdate = CameraUpdateFactory.newLatLngZoom(latLng, zoom);
-        map.animateCamera(cameraUpdate);
+    private void centerToCurrentLocation(){
+        if(!PoiMapFragment.isCenteredToCurrentLocation){
+            map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 13));
+            CameraPosition cameraPosition = new CameraPosition.Builder()
+                    .target(new LatLng(location.getLatitude(), location.getLongitude()))      // Sets the center of the map to location user
+                    .zoom(13)                   // Sets the zoom
+                    .bearing(90)                // Sets the orientation of the camera to east
+                    .tilt(40)                   // Sets the tilt of the camera to 30 degrees
+                    .build();                   // Creates a CameraPosition from the builder
+            map.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
+            PoiMapFragment.isCenteredToCurrentLocation = true;
+        }
     }
-
 
     @Override
     public void onLocationChanged(Location location) {
@@ -208,8 +207,10 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
                 .setInterval(UPDATE_INTERVAL)
                 .setFastestInterval(FASTEST_INTERVAL);
 
-        if (checkPermission())
+        if (checkPermission()){
             LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
+        }
+
     }
 
     private boolean checkPermission() {
