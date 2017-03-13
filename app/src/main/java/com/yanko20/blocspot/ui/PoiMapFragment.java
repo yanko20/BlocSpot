@@ -9,7 +9,6 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.Fragment;
-import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -143,7 +142,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
 
     public void mapAndLocationReady(GoogleMap map, Location location) {
         if (map != null && location != null) {
-                if(checkPermission()){
+                if(BlocSpotApp.checkPermission()){
                     map.setMyLocationEnabled(true);
                     centerToCurrentLocation();
                 }
@@ -213,12 +212,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
 
     }
 
-    private boolean checkPermission() {
-        Log.d(BlocSpotApp.TAG, "checkPermission()");
-        // Ask for permission if it wasn't granted yet
-        return (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_FINE_LOCATION)
-                == PackageManager.PERMISSION_GRANTED);
-    }
+
 
     @Override
     public void onConnectionSuspended(int i) {
