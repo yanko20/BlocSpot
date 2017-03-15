@@ -30,6 +30,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.database.Database;
+import com.yanko20.blocspot.geo.BlocSpotGeofence;
 import com.yanko20.blocspot.model.PointOfInterest;
 
 import io.realm.RealmResults;
@@ -91,7 +92,6 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
         googleApiClient.disconnect();
     }
 
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -142,15 +142,17 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
 
     public void mapAndLocationReady(GoogleMap map, Location location) {
         if (map != null && location != null) {
-                if(BlocSpotApp.checkPermission()){
-                    map.setMyLocationEnabled(true);
-                    centerToCurrentLocation();
-                }
+            if (BlocSpotApp.checkPermission()) {
+                map.setMyLocationEnabled(true);
+                centerToCurrentLocation();
+                BlocSpotGeofence blocSpotGeofence = new BlocSpotGeofence(googleApiClient, map);
+                blocSpotGeofence.startGeofence();
+            }
         }
     }
 
-    private void centerToCurrentLocation(){
-        if(!PoiMapFragment.isCenteredToCurrentLocation){
+    private void centerToCurrentLocation() {
+        if (!PoiMapFragment.isCenteredToCurrentLocation) {
             map.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(location.getLatitude(), location.getLongitude()), 13));
             CameraPosition cameraPosition = new CameraPosition.Builder()
                     .target(new LatLng(location.getLatitude(), location.getLongitude()))      // Sets the center of the map to location user
@@ -206,13 +208,11 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
                 .setInterval(UPDATE_INTERVAL)
                 .setFastestInterval(FASTEST_INTERVAL);
 
-        if (BlocSpotApp.checkPermission()){
+        if (BlocSpotApp.checkPermission()) {
             LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
         }
 
     }
-
-
 
     @Override
     public void onConnectionSuspended(int i) {
