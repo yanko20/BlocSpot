@@ -177,7 +177,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
 
     public void getLastKnownLocation() {
         Log.d(BlocSpotApp.TAG, "getLastKnownLocation()");
-        if (checkPermission()) {
+        if (BlocSpotApp.checkPermission()) {
             location = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
             if (location != null) {
                 Log.i(BlocSpotApp.TAG, "LasKnown location. " +
@@ -206,7 +206,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
                 .setInterval(UPDATE_INTERVAL)
                 .setFastestInterval(FASTEST_INTERVAL);
 
-        if (checkPermission()){
+        if (BlocSpotApp.checkPermission()){
             LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
         }
 

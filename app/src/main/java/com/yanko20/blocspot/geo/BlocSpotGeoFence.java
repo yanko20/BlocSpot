@@ -7,13 +7,12 @@ import android.support.annotation.NonNull;
 import android.util.Log;
 
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.PendingResult;
 import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.ResultCallback;
-import com.google.android.gms.common.api.Status;
 import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofencingRequest;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Circle;
 import com.google.android.gms.maps.model.CircleOptions;
 import com.google.android.gms.maps.model.LatLng;
@@ -21,15 +20,13 @@ import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.database.Database;
 import com.yanko20.blocspot.model.PointOfInterest;
 
-import java.util.concurrent.TimeUnit;
-
 import io.realm.RealmResults;
 
 /**
  * Created by ykomizor on 3/8/2017.
  */
 
-public class BlocSpotGeoFence implements ResultCallback{
+public class BlocSpotGeofence implements ResultCallback {
 
     private static final long GEO_DURATION = 60 * 60 * 1000;
     private static final String GEOFENCE_REQ_ID = "My Geofence";
@@ -37,20 +34,26 @@ public class BlocSpotGeoFence implements ResultCallback{
     private static final float GEOFENCE_RADIUS = 500.0f; // in meters
     private PendingIntent geofencePendingIntent;
     private Circle geoFenceLimits;
+    private GoogleApiClient googleApiClient;
+    private GoogleMap map;
 
-    // Create a Geofence
-    public Geofence createGoefence(LatLng latlng, float radius){
-        Log.d(BlocSpotApp.TAG, "createGoefence");
+    public BlocSpotGeofence(GoogleApiClient googleApiClient, GoogleMap map) {
+        this.googleApiClient = googleApiClient;
+        this.map = map;
+
+    }
+
+    public Geofence createGeofence(LatLng latlng, float radius) {
+        Log.d(BlocSpotApp.TAG, "createGeofence");
         return new Geofence.Builder()
                 .setRequestId(GEOFENCE_REQ_ID)
                 .setCircularRegion(latlng.latitude, latlng.longitude, radius)
                 .setExpirationDuration(GEO_DURATION)
-                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT )
+                .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .build();
     }
 
-    // Create a Geofencing request
-    public GeofencingRequest createGeofenceRequest(Geofence geofence){
+    public GeofencingRequest createGeofenceRequest(Geofence geofence) {
         Log.d(BlocSpotApp.TAG, "createGeofenceRequest");
         return new GeofencingRequest.Builder()
                 .setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER)
@@ -58,23 +61,23 @@ public class BlocSpotGeoFence implements ResultCallback{
                 .build();
     }
 
-    /*
-        We use a PendingIntent object to call a IntentService that will handle the GeofenceEvent.
-        We create the GeofenceTrasitionService.class later.
-    */
-    public PendingIntent createGeofencePendingIntent(){
+
+    public PendingIntent createGeofencePendingIntent() {
+        // We use a PendingIntent object to call a IntentService that will handle the GeofenceEvent.
+        // We create the GeofenceTrasitionService.class later.
         Log.d(BlocSpotApp.TAG, "createGeofenceRequest");
-        if(geofencePendingIntent != null){
-            return  geofencePendingIntent;
+        if (geofencePendingIntent != null) {
+            return geofencePendingIntent;
         }
-        Intent intent = new Intent(this, GeofenceTransitionService.class);
+        Intent intent = new Intent(BlocSpotApp.getAppContext(), GeofenceTransitionService.class);
         return PendingIntent.getService(BlocSpotApp.getAppContext(), GEOFENCE_REQ_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);
     }
 
-    // Add the created GeofenceRequest to the device's monitoring list
-    private void addGeofence(GeofencingRequest request, GoogleApiClient googleApiClient){
+
+    private void addGeofence(GeofencingRequest request, GoogleApiClient googleApiClient) {
+        // Add the created GeofenceRequest to the device's monitoring list
         Log.d(BlocSpotApp.TAG, "addGeofence");
-        if (BlocSpotApp.checkPermission()){
+        if (BlocSpotApp.checkPermission()) {
             LocationServices.GeofencingApi.addGeofences(
                     googleApiClient,
                     request,
@@ -86,33 +89,42 @@ public class BlocSpotGeoFence implements ResultCallback{
     @Override
     public void onResult(@NonNull Result result) {
         Log.i(BlocSpotApp.TAG, "onResult: " + result);
-        if(result.getStatus().isSuccess()){
+        if (result.getStatus().isSuccess()) {
             drawGeofence();
-        } else{
+        } else {
             Log.e(BlocSpotApp.TAG, "onResult: FAILED");
         }
     }
 
-    private void drawGeofence(){
+    private void drawGeofence() {
         Log.d(BlocSpotApp.TAG, "drawGeofence()");
-        if(geoFenceLimits!=null){
+        if (geoFenceLimits != null) {
             geoFenceLimits.remove();
         }
         Database db = Database.getInstance();
         RealmResults<PointOfInterest> poiList = db.getPoiList();
-        for(PointOfInterest poi : poiList){
-            poi.getLat();
-            poi.getLng();
+        for (PointOfInterest poi : poiList) {
             LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
             CircleOptions circleOptions = new CircleOptions()
                     .center(latLng)
-                    .strokeColor(Color.argb(50, 70,70,70))
-                    .fillColor(Color.argb(100, 150,150,150))
+                    .strokeColor(Color.argb(50, 70, 70, 70))
+                    .fillColor(Color.argb(100, 150, 150, 150))
                     .radius(GEOFENCE_RADIUS);
             geoFenceLimits = map.addCircle(circleOptions);
         }
+    }
 
-        public void startGeofence(){}
+    public void startGeofence() {
+        Log.i(BlocSpotApp.TAG, "startGeofence");
+        Database db = Database.getInstance();
+        RealmResults<PointOfInterest> poiList = db.getPoiList();
+        for (PointOfInterest poi : poiList) {
+            LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
+            Geofence geofence = createGeofence(latLng, GEOFENCE_RADIUS);
+            GeofencingRequest geofencingRequest = createGeofenceRequest(geofence);
+            addGeofence(geofencingRequest, googleApiClient);
+        }
+
 
     }
 }

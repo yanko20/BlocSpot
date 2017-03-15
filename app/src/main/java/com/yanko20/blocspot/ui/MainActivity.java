@@ -1,5 +1,7 @@
 package com.yanko20.blocspot.ui;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -20,6 +22,11 @@ public class MainActivity extends AppCompatActivity {
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
         viewPager.setAdapter(new PoiFragmentPageAdapter(getSupportFragmentManager()));
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
-tabLayout.setupWithViewPager(viewPager);
-        }
-        }
+        tabLayout.setupWithViewPager(viewPager);
+    }
+
+    public static Intent makeNotificationIntent(Context geofenceService, String msg){
+        Log.d(BlocSpotApp.TAG, "makeNotificationIntent mmsg: " + msg);
+        return new Intent(geofenceService, MainActivity.class);
+    }
+}
