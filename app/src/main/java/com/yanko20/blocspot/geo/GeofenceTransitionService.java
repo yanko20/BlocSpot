@@ -32,10 +32,12 @@ public class GeofenceTransitionService extends IntentService {
 
     public GeofenceTransitionService() {
         super(TAG);
+        Log.d(BlocSpotApp.TAG, "GeofenceTransitionService");
     }
 
     @Override
     protected void onHandleIntent(Intent intent) {
+        Log.d(BlocSpotApp.TAG, "onHandleIntent");
         // Retrieve Geofencing intent
         GeofencingEvent geofencingEvent = GeofencingEvent.fromIntent(intent);
 

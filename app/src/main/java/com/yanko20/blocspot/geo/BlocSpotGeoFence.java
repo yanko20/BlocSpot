@@ -65,7 +65,7 @@ public class BlocSpotGeofence implements ResultCallback {
     public PendingIntent createGeofencePendingIntent() {
         // We use a PendingIntent object to call a IntentService that will handle the GeofenceEvent.
         // We create the GeofenceTrasitionService.class later.
-        Log.d(BlocSpotApp.TAG, "createGeofenceRequest");
+        Log.d(BlocSpotApp.TAG, "createGeofencePendingIntent");
         if (geofencePendingIntent != null) {
             return geofencePendingIntent;
         }

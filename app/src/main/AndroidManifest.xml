@@ -20,6 +20,7 @@
             android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyD7uQ1fRAnWm1HysfSAnq8h0Y_kpSnewx4"/>
         <uses-library android:name="com.google.android.maps"/>
+        <service android:name=".geo.GeofenceTransitionService"/>
     </application>
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
