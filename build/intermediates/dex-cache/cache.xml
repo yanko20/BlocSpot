@@ -2,661 +2,661 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-panorama\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-panorama-10.0.1_8b8af240214d90645dda1ede41dd9f3e2d8422b5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_826e23ecb11f6dd5db338dd45b89c97e02694fce\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-vision\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-vision-10.0.1_89d81699ca79300255848003f230090c736a0965\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-auth\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-auth-10.0.1_2af9a73935884f78c69d7bf95590b58ef0d9aaea\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-10.0.1_cd1cab54173a1376f80cac706dea80b36a0a2b2d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-10.0.1_bf4980aeed501e4094f7589b804d115df873a71a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-10.0.1_e3ab7f5d17ed46408e190b915e3608aed253c3a1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-messaging\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-messaging-10.0.1_b7af270ea6a7aa6d826ff72b76f8c2235d3dda51\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-base\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-base-10.0.1_c4e320c6c3fd24969e2715609c4a29e5ecf97560\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\io.realm\realm-android-library\2.2.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a4b88325124c4bd658ae2717977668646ba9b37a">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\io.realm-realm-android-library-2.2.2_9c020d6a706f64f23414ca3047b9093e6aa3d658\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_448b85c4d73da9a8f3ef8ed95e6eb1227fd965f3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-api\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-api-10.0.1_48418d504c1bb6a4d5e9afcd60702077dd41c5fb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\libs\internal_impl-24.0.0.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.0.0_c1abbb9b66110b7cf1171ba4d0ece54e7107c506\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="63fca98dc73b298e84243aa78ca034cbf76390ea">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_a3543d405de145306874b41d87456e2e71bbbd82\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-maps\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-maps-10.0.1_b6870e8a44a37fe3c6a701f7a9ca6c9ab1a22be3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_d0712ba83301b8ab1e112a2837d2d4f188370310\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-basement-10.0.1_849f1c88d002e0244465d980af2c8f0922aaae92\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-location\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-location-10.0.1_73e280b1d97a65a6ec64682ed45ce1b73d0de644\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-places\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-places-10.0.1_f2f26fa0d48fee33d3ca4267580664d224b451c5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-10.0.1_23fdad735319640552ff2dc8d3f403d794f4c275\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gass\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gass-10.0.1_ffa4b6551daab92e7af8430112d022f72b638782\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wallet\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wallet-10.0.1_1a35956099695071a2ee462bacafab168bd4ff7f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-storage-common\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-storage-common-10.0.1_12d1c62c5311c53d441051ca8d9f4a6445254b5b\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-instantapps\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-instantapps-10.0.1_42c36e207c12b078b5de2ce4d9444f3e93d06a3d\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth-base\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-base-10.0.1_ab33aca36fd99b4319b71a06ab422fbb7808af93\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_0c75330fa94731a0809ded980b9a544693f2de4f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-config\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-config-10.0.1_4ea8965b234bac3246810404fea1c731f6f4d9a5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database-connection\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-connection-10.0.1_4d45b709394b4d0b9c4b926b44e86b662434ee4e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-analytics-impl\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-analytics-impl-10.0.1_b0b8b22f0bef2dda8baedca08cce34764179b8b9\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-plus\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-plus-10.0.1_fcb5624d33f95ae4922245f90df0b5d107711f95\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-appinvite\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-appinvite-10.0.1_9510148a731c978c6b11518a71c582921cbaf934\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\design\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-24.2.1_d1e52ef84c4709c8e50990e26ece9e2b240bc22e\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-fitness\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-fitness-10.0.1_6f9f872cd582ce03a205e5993163fbe657d994b8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-iid\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-iid-10.0.1_64ade74e5904db5b0d141fb1cfac82478532aa3a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_8ef42c75f9e07b3995b447a96e1aa4335a87b6aa\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_2c187ec875bf485e612d79eb7c7e848d47fdfe11\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.getkeepsafe.relinker\relinker\1.2.2\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.getkeepsafe.relinker-relinker-1.2.2_8f907454f189318f6a5e90ec3f3a3b871ad973cb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics-impl\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-impl-10.0.1_450defc49cf133f4c3a53bb963e39ba583bf6712\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_8c69ee91e0fd109b0d87d7bce6ed41c02ad97ca5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-database\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-database-10.0.1_17b5e045e6f65f305321ffc1da57065890c40c84\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-appindexing\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-appindexing-10.0.1_8f73192bf71c73ecb1444a3d1e990fc053e1d541\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-drive\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-drive-10.0.1_8ed56f637f7f2694831ab2f913029819d8e0b592\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-gcm\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-gcm-10.0.1_8924cdc6940b0b12ac3cd7a30f0966e8171e82cf\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-clearcut\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="1d193729baf37df3d902a423291423a0df7e3779">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-clearcut-10.0.1_dca9ad53ba654c18e7cdbdc901bc17b694ad3bba\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_ab53a277048ae471c8ca087e1e8e1d004272db01\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\palette-v7\24.0.0\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-palette-v7-24.0.0_b57a5421d5f34240a203f9ddc068f7521a27c532\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-awareness\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-awareness-10.0.1_228e36d2de95270395e5341028b2829a04f4fe0f\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-common\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-common-10.0.1_fca9e9340fc634bcd0a16ba66e41b6ff189032be\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_818b95b758f3eba211c46885cdc49b4730b7e1a3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-ads-lite\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-ads-lite-10.0.1_582712e210c42c992bce028c40fb9002bf3f2b9a\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-wearable\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-wearable-10.0.1_20e7de75195d8b1302c59d2bfee8e06110f6fde0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-10.0.1_9c036e4683926644f04df9ece4d9b314343b52d8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\d57f9ff8e3f8c7abaa89a0e5115367e4ed82d4ae\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_e66a0566fceb37d3ba853ed30189331b685fbc41\classes.dex" />
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_2af371ba765a98561cab531f538394c5e69b2482.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-auth\10.0.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\19a3b0962fc7f84aebcbda170fac3f2897fdf78d\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-auth-10.0.1_6db623f1aff7173fb32a754e51800229985b519d\classes.dex" />
+        sha1="39907d5c8f5902fffef30160ca7447c93b82405c">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_f7345c35ca7f8654d3aed730c65a08a6354b926e.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-iid\10.0.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\08113a127e49cf340301a8b810b4fd1d76685ef5\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-iid-10.0.1_497947843daf99beec9a7208d5537226446fbb76\classes.dex" />
+        sha1="d0460bf07cc3657e0be518ca01c174493951c6b8">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_738f43ead3d3e9b96713fd0c1f19c8383e8ef098.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-analytics\10.0.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\a7d13aa8e7e855e86ef76ae6c4f98e0f4b349720\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="44a694d4095be84c2888764b1f7256b385c030ad">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_6ea2e273a2c86fc7f902d4fa39678c413d9ea735.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\139de0fb323427486ca1d3b4675c4f5d2d181b17\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="4c829ff0ccfecb28a999ee46d9e75948dfc777a4">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-analytics-10.0.1_de2b9f295f27c7ab6644931dec695cf70112fc15\classes.dex" />
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_663873a8289f964f3a6766fa0d4788fdb8352083.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\.gradle\caches\modules-2\files-2.1\io.realm\realm-annotations\2.2.2\12c92a768592dd916407f3c45644a83a7ad2b103\realm-annotations-2.2.2.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="12c92a768592dd916407f3c45644a83a7ad2b103">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\realm-annotations-2.2.2_15f05eea7ddf2b475557b539d63ddc6b145d9bf5\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_ece0d06d566ba4459349e1e960a75a9c56d54b15\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-safetynet\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-safetynet-10.0.1_dbff1668ee6d732e4e73c73ca027d1c836f916ed\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_d4dfbf9bb4f99d83a4b6d68f1ec5076590bcbd65\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-24.2.1_f34e9734188e16617fbf17100260f28ad0b6c1cb\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-games\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-games-10.0.1_a6817f5688848acf987d8ab645f3447848bc0bf3\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="4638f963761ca2d1ddc31f853bf2cfe8f283db04">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_ee064cc5e13e3fb749ea9e383830a9f19d3292f1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tasks\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tasks-10.0.1_ad5b6396e76746f7195fb46b0c69ef83ac3347cc\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-identity\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="a48dc0b148059764d32500be558702d5ff932058">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-identity-10.0.1_cf860f9b42eda61850573c03fc4c76b2468c3740\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_e0e3592d82ca19eeafc0c83cef72426f8f3a8484\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.firebase\firebase-crash\10.0.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="25.0.1"
-        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.firebase-firebase-crash-10.0.1_ac97727798115e72ab2c9061a48d29f31baf1391\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_e1141f6d5f9c1432c8a45765708d440bc45586d8\classes.dex" />
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\support-annotations-24.2.1_b94f65fa346f92d041b45a191e39ef139fae43d1.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\29e9b9cffd2c4b658c27b1cfc7e968d5f971aca3\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_a04a499c9120066ba5691ee5eae678f6acea2e68\classes.dex" />
+        sha1="2d5d113b0352ab60946fc44c518cf68fd26cbb79">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_c9d26b2bc2153ca56c37c07240f6ab58632a3062.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-tagmanager-v4-impl\10.0.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\649c2f404fc43c21af20a713b5d25322dbd9bbc6\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-tagmanager-v4-impl-10.0.1_b2390a760716a6b70af567290e62d43007cf4315\classes.dex" />
+        sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_ee396cd7c9738e38cbe3482feae4886c5e4b1ade.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.android.support\mediarouter-v7\24.0.0\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\1ffa388930eaf2a1720362a882cd50f5fb82842c\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="b327fbe2fad414bc38cf0ce8f7efe1a38f572837">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-mediarouter-v7-24.0.0_35a8558f09725c20042eec377e470c60f4fceb6c\classes.dex" />
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_30c19c3af7a8cbbe9b977f216d45c4a9dfae5292.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-cast-framework\10.0.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\ecac8ca3ed51711d8291cacae2a78c26e5697c00\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
-        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-cast-framework-10.0.1_6e97525cd293517f1bfa96e27a5f1d162e71f8e5\classes.dex" />
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_70e39c7eb7aa25eca9da6436d8a56e0a850d154d.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\exploded-aar\com.google.android.gms\play-services-nearby\10.0.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\8a5cb6135f088c3219c046206d33b26d2e1e713f\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="d5c731fc64c03dfe04d51134955b483551c35849">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_6c1b8cfb6608866a1bfe2cf1832ac4aaa8227aa4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\d6ca43c639666e965b6bfbb542c2eedc1b909731\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_da55fc72264a29a5999a8b6fe4d05cbeb1330c84.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\2e8e658d0f47300839db2e47c3ecbd6a13479a58\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_0b71fdf4e2f42d4c39446a4f8bc5d17e59e0f601.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\a3511cfd7ee3faa1c3e4ac7c373a777642fb5f06\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9cca2818594cc5348806d6662133491e7ea0fa8d">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_b12bd519f031c3a979c51300ad6ede6e1d7a1299.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.gradle\caches\modules-2\files-2.1\io.realm\realm-annotations\2.2.2\12c92a768592dd916407f3c45644a83a7ad2b103\realm-annotations-2.2.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="12c92a768592dd916407f3c45644a83a7ad2b103">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\realm-annotations-2.2.2_79350138b861875a1e7dc5c7464f5dc91aa389f8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\df246a77a4ab28ac9c017409430369430734eeec\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="971509bbe30bb7b971fc1c49d7b23d0d818830ac">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_0c2c73a60c14940a68fa9f8f741b4c65c6363f23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\d84e5b03fd526974ad7c643369b8bac04a8ccc33\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ba6aa5e69ef31dee57208125323cee958fc67565">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_a2c66bb3e513e154bcc94e3738c697cbfc6ac3b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\a7b49ec7dddb9d1b32622f42c56dd1bab1a3ffd8\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b1df8fa3d372a27e4e969ce00b00689ee1eed031">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_dbc5d89e5071c7cc0289921515ea32254dca38de.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\d6ca43c639666e965b6bfbb542c2eedc1b909731\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_8028767a543133f1a7f03ce473c97d6de4b7e11d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\6e748fc459f2364b22534affed787dbc2bf74dfb\output\jars\classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="c6e1f361e9d61aece9dac39b77fcc98a337a144d">
-        <dex dex="C:\Users\yanko\AndroidStudioProjects\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.google.android.gms-play-services-nearby-10.0.1_d0a02b08e6a76133d69593b7b8932166b9cad9f0\classes.dex" />
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_fc77add803148a45095f9c771d97dee758008667.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\e7e7ccc016d040f7e9053360a644eba4c8407d72\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8308ed003522a2ee8958311afcc4cfd0470377cd">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_55e8d9c80a6396cfc2316c20ae94c40895f404a0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\8940814d001662f332b4ea06abff00d87d60972c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_b9a0fab52620701661c0846f49b9c0e8dd99bcb8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\7f7ead12756f5f3d183c59ef566a26e3ba8d868b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ae80d328a8548b4610ead6c624bab8c6a6984f5b">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_fdb39f016b8288693068babaf73768a0277f8e1e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\24c08b66b9322a0912c9ce976054094d3608932c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="57c2eceb8548de84509d1ebc293fedec53231f6c">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_92be7a411533ca52344835b6af16d9d78b868010.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\03a2c5c5ce0273c690110845922d2c16302bc8ae\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c14f0c89f28cf782e42581ab0aba5f63af39b3d2">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_954966f6245805d7accef43477e16b73fdaf3524.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\8940814d001662f332b4ea06abff00d87d60972c\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_85c827ce3c22d2fecfe30a5b1cd0acfa19cca880.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\649c2f404fc43c21af20a713b5d25322dbd9bbc6\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_c4e02f84cb06fd7133eac33f470db77dd631c520.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\ee0623720a5cec1cacfdc048fdee40746fe36559\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="25438f55fc6d906a0e72f30b21487541430ede43">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_884d3cb2e438a5f9dc2cce58356389e176ca739c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\9d9a93d0becf196420f58c3f6348d7ce37eecc38\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="45305e6af414dab5aba6c3225081c2f15c3bdd1e">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_2fce646ec7723d440f8837be954d826d75bac4b3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\00276d514a2e675033ae4e8100f4fcee2b7d1210\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7a64bf6dc775198eed9db9468a133adf7dfe6562">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_519bfca82a9af6ceea0c2e554f472fcd2dadf97b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\445208e307d629cff8f295c14f3fafc35e66990a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4385ccc0a88b33d182a836eadb47be55c8eb1107">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_cb165fbd996a97447345522216cc96baf34dc470.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\d57f9ff8e3f8c7abaa89a0e5115367e4ed82d4ae\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_ece8e5520f2469333c342a246203e45784064b73.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\e9061e1fbcfa295fa3c4f4e3d182af5235b5d1d3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="eb0d830e3eabb9deb9ec44869cf7ac7ea1ad794c">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_55df2ba8284c5387de21c129bd0aa8f84ae2a254.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\9626bcd3b653aa6ab7dbace23cf6d67d7dc88c7a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="1d193729baf37df3d902a423291423a0df7e3779">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_9467ce66e523eb8a42696b9489f0af27a8689dfa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\340a010a2f7efcbc2702de6f8aae18c4be441968\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="7521486d9bfd2cd9e756e0cf75ed7d97f2ce2d3b">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_76475c286568d3176e0848eba30d5d75ba48bb49.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\8a4421509de7d4e24aa962ea609d415ef9885eb6\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_c8c69ac53977223ea6e61d84180d247eb7b2e865.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\4d56145fc014ef7309dfbb9f1a25376c783dd997\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e871881b36b32e6bfd271a830c6eeb54ff0fc185">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_34998ae8b39ba967b6e265c9ba6703d46075dcbf.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\e7771c75e94f332b71e191c9e6ebb63428344ed9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="433f4d6aa5f21f19552afe0e6c5eff0fedba73ad">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_97305f14a938f03bd35c17edc371f20ed676209c.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\2c28792b29e1af6c44a7f5ccd763e2f8413a05c5\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6bb5d347ebc0c6ef3c83a905222a688da5d2f7b4">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_391255d51807c51d26cc9e234719003338a93d4b.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\1ffa388930eaf2a1720362a882cd50f5fb82842c\output\jars\libs\internal_impl-24.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b6763651ec29b4c95e7bbe63fc393ffcc8c4c2c5">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\internal_impl-24.0.0_c3346274657a1da960eeb8f2be756f6d35313976.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\0ccb09dc8c6e45fd04c6a0265131233c74c961fe\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e96c6974cf924e7ee3b230e6847d5731423388c9">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_5def3cc0f4bb432be530ea0cfa189439df822d24.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\59944086019f273b735aeda9635015fc4ef5e75c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="09cf6aa1390f95157e8295d02be7868f568825fc">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_dd1da4e8a7625db997c42ebeee96f3e48f2de03e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\d3e26f80fde017e708572e25ed2357bb2c1c0ef2\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="27777b3cad3c20b1acab19f6e37fe3e03371bf6e">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_76766a42670526b65da7f4d253d3977365dcbb68.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\9aaf2d275ee7c88908afaa13369759f9cb571b2c\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="771267c5b0c7a5b348d3205dcfa1f871af7e0177">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_8f77bb31a61d8e517a14b243e20277d6af27610a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\ae38de29b644dd904a7d20941cf98a945410ad4e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="4b17463c814bdc562fb0392fa3494063623a0904">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_51bbecdaaea3b78f522656cbc05f9c33d88ba909.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\62885c798a0438c484a204b3c1177f247e9da1d3\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_ab3b97ddd725661d0cf2dd4fb0ab2743b9d4b97f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\15796b71a46ca620f73f132847168535e0d44924\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="dd39827d2067497e60e21da48a7926000b6d4b0c">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_24b646f6830267c3239571da3bb14289cf9d8b88.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\62885c798a0438c484a204b3c1177f247e9da1d3\output\jars\libs\internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\internal_impl-24.2.1_5b8240e682d234263667edf87cca05f5402289f8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\2acde8586c89a271b2f0bfcd1e5b82e74c6cd333\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e2185aff89caeb337b1ffc36d5e525d8318e7cfe">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_8a668a174bdd857396a6c3de92f931d97b514880.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\84f1b1a9c251584482371c2d3026fbd1281f059b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f6cf557be4dbd0282ea2388633e5378634423226">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_dac93cac35a5da12edee67eb9d0dea1974d274c8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\e847ef8ad9e53a75c4258cc7dfed981521fe0246\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="756f6297eef79784f5e356dcd4f39865028b2bd0">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_261d68c18c96d2ee724da3d9b538a8b664a64d57.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\7a9290ed1352e53f1068525436b0ef92cb52141d\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f23ad0f8e58713ff4b55f61c0bbde3830378347c">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_28c36bc149da977e007cdc1ed5955c4cb8965d43.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\4f7adf1cd3e06d9a0a43ca94058d1058e2d36950\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a48dc0b148059764d32500be558702d5ff932058">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_9fcaa7dbcc75f639356fece52e1147eced40f70d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\77346774b8e4f1d265d2def262b27c07412afb8a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="e03f47f3d1017a093bb3239d4ec47c3447f40744">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_6f95ba59d5860924b42b597b97f374204aa8be00.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\a161b4ff18627df87e04113b2610383276f310e4\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="92c871a22463a247e8a77a9f3fd231c278788c4a">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_7e73c1f54375062ce05fe6089360cc67d414c12f.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\development\BlocSpot\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b313898e507590a07318a6326ced9351becc38e5">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_da5b80aa306e9b7c61516162a915806704228087\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\390c2d74da1c6fb5291d8e270980b1f43ef7c3d9\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6116e0e7069de7fc259aac8e08b84f32c2038231">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_2f759fc28c6d72bdd85fe127da5e622c081bff4f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\433357060268f49c5f548ac1f0274811ec38302e\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="734e80dffea7bd76c18ae256822a124c30d85850">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_dde565ce973ce922536dbd3656cda5c996042142.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\043c684f45214b51efdb7dfc41312fccc74ff76b\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="f3e51e9c5233b8897f61e08a6a27bc36283c2724">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_fea0eafd96c98b81716d9150d781d909faff3419.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\1c1afd9983f9bebe633b8f991c1b26f2bcc2d5ff\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="df1cb17511aabbb63264a0024949d1e42502a512">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_1e5c56f8bbc832a199bd964c178967e6b507b1b0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\8b2f9bb21ded61f2ce9ad7b1975532ebfc5516db\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="6addaba208e21c6da776d0ca75b6b23a6ccd5499">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_3ffbe961ee843e16934ee34b20381bdb4c072163.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\f7ff77e7f847c5ebca49e7bd3d2879ab42149311\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="486371f97baad8e607f332f20fee1d3dd00a731a">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_7ffdef62bf304c5ed86c6f786af030654ee1b86f.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\767daab99c80d80491156c69e52c8c45f4e554b0\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8010ae6ed32828a145b25ec97bc07b7a83c6318f">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_2ed502b1299ea32a6426b90c59fa4f9f8da153fb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\7757b998669fcac0402f995fce876fcac6d500a7\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="1e11c68fec92a17c84dd8d1dd80e74c4e67b12e2">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_91d7a87dbd16a0841bc596b92d50af100149ab23.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\d6253c409647f36c2b74a5f5988280ab8d233929\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="a4b88325124c4bd658ae2717977668646ba9b37a">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_612376e5e0f448580d3b6eb7fef3fbcc70fa0650.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\b0bccb83e2c01275037267bbbf3fb12f8519d612\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="8f128aeeb7e31271b28a7adb9dac1f3a6ed9f5e7">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_981ffea43e3617143cd7c8c7081abf9854330d2a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\02440b8a4859db01f587970cc5e3551c66a3bd45\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b955cb3a1ad6f1b6ff728ce1e0cd592c1717b440">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_27f0267a779cd0f39992e6b21ad65b182a1905a8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\03d00061ee898de776158513a2c849efbd67c849\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="028f8255cb977b29cdffbfcf05caa0459686120c">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_5a580cd975869b2d54ae665471bb3bdc001864fa.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\07d47043b25638a4e851f12e0553373cb83ca90a\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="b64dd5f01bc37de289f90fd59299b0c76d119611">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_a7b3ba039a320790d19204d98867bef5762e6bd3.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\548f5bb3dc231b4ab1f96462b5cb2623ffe71040\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="de29a39f9260f88151b1ef453140e71c76b6c415">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_c8d31bc65444fdc609f23b89ebab5ccc24aaf481.jar" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\development\BlocSpot\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c82741bc129dd5f99f11a4ab8666ae24262053b6">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_7c16cc1a6de532fd66af3eb5ba33d0d776deb8a3\classes.dex" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\6e16ef03ae21336f90b54e24982df087472c59bb\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="ffc15e965a9e8c28f24455eedd4cac215c45d1fc">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_a45e0137a034a2c55852ae8d4afaee77521696d9.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="C:\Users\ykomizor\.android\build-cache\3aa0949f50e5ef0f1d0342a0ea382f509e03da08\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="408a599ac77cd17fe8e8919326bec617b3d005bd">
+        <dex dex="C:\development\BlocSpot\app\build\intermediates\pre-dexed\debug\classes_6cfe6243c0879a1da0b071db64c28935917985d8.jar" />
     </item>
 
 </items>
