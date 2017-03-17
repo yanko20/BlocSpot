@@ -20,6 +20,8 @@ import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.database.Database;
 import com.yanko20.blocspot.model.PointOfInterest;
 
+import java.util.ArrayList;
+
 import io.realm.RealmResults;
 
 /**
@@ -36,18 +38,19 @@ public class BlocSpotGeofence implements ResultCallback {
     private Circle geoFenceLimits;
     private GoogleApiClient googleApiClient;
     private GoogleMap map;
+    private Database db;
 
     public BlocSpotGeofence(GoogleApiClient googleApiClient, GoogleMap map) {
         this.googleApiClient = googleApiClient;
         this.map = map;
-
+        db = Database.getInstance();
     }
 
-    public Geofence createGeofence(LatLng latlng, float radius) {
+    public Geofence createGeofence(LatLng latlng, String poiId) {
         Log.d(BlocSpotApp.TAG, "createGeofence");
         return new Geofence.Builder()
                 .setRequestId(GEOFENCE_REQ_ID)
-                .setCircularRegion(latlng.latitude, latlng.longitude, radius)
+                .setCircularRegion(latlng.latitude, latlng.longitude, GEOFENCE_RADIUS)
                 .setExpirationDuration(GEO_DURATION)
                 .setTransitionTypes(Geofence.GEOFENCE_TRANSITION_ENTER | Geofence.GEOFENCE_TRANSITION_EXIT)
                 .build();
@@ -101,7 +104,6 @@ public class BlocSpotGeofence implements ResultCallback {
         if (geoFenceLimits != null) {
             geoFenceLimits.remove();
         }
-        Database db = Database.getInstance();
         RealmResults<PointOfInterest> poiList = db.getPoiList();
         for (PointOfInterest poi : poiList) {
             LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
@@ -116,15 +118,22 @@ public class BlocSpotGeofence implements ResultCallback {
 
     public void startGeofence() {
         Log.i(BlocSpotApp.TAG, "startGeofence");
-        Database db = Database.getInstance();
         RealmResults<PointOfInterest> poiList = db.getPoiList();
         for (PointOfInterest poi : poiList) {
             LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
-            Geofence geofence = createGeofence(latLng, GEOFENCE_RADIUS);
+            Geofence geofence = createGeofence(latLng, poi.getId());
             GeofencingRequest geofencingRequest = createGeofenceRequest(geofence);
             addGeofence(geofencingRequest, googleApiClient);
         }
+    }
 
-
+    public void clearGeofence(){
+        Log.i(BlocSpotApp.TAG, "clearGeofence");
+        RealmResults<PointOfInterest> poiList = db.getPoiList();
+        ArrayList<String> poiIdList = new ArrayList<>();
+        for (PointOfInterest poi : poiList) {
+            poiIdList.add(poi.getId());
+        }
+        LocationServices.GeofencingApi.removeGeofences(googleApiClient, poiIdList);
     }
 }

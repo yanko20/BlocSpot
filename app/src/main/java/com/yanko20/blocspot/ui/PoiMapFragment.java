@@ -146,6 +146,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
                 map.setMyLocationEnabled(true);
                 centerToCurrentLocation();
                 BlocSpotGeofence blocSpotGeofence = new BlocSpotGeofence(googleApiClient, map);
+                blocSpotGeofence.clearGeofence();
                 blocSpotGeofence.startGeofence();
             }
         }
