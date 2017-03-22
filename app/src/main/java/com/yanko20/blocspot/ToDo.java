@@ -6,7 +6,7 @@ package com.yanko20.blocspot;
 
 public class ToDo {
 
-    // todo create a database class for categories
+    // todo create a database class for categories with name and color
     // todo build dialog fragment for categories
     // todo add action bar and conect ot dialog fragment
 
