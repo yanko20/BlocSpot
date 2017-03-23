@@ -24,7 +24,6 @@ public class PoiListFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private Database db;
 
     @Nullable
     @Override
@@ -35,7 +34,7 @@ public class PoiListFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         dataSetup();
-        RealmResults<PointOfInterest> dataSet = Database.getInstance().getPoiList();
+        RealmResults<PointOfInterest> dataSet = Database.getAllPois();
         adapter = new PoiItemAdapter(dataSet);
         recyclerView.setAdapter(adapter);
         return v;
@@ -58,14 +57,7 @@ public class PoiListFragment extends Fragment {
         poiKremlin.setLng(37.617499);
 
         // database
-        db = Database.getInstance();
-        db.savePoi(poiMachPichu);
-        db.savePoi(poiKremlin);
-    }
-
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        db.getRealmObj().close();
+        Database.savePoi(poiMachPichu);
+        Database.savePoi(poiKremlin);
     }
 }

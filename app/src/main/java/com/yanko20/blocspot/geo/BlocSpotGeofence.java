@@ -38,12 +38,10 @@ public class BlocSpotGeofence implements ResultCallback {
     private Circle geoFenceLimits;
     private GoogleApiClient googleApiClient;
     private GoogleMap map;
-    private Database db;
 
     public BlocSpotGeofence(GoogleApiClient googleApiClient, GoogleMap map) {
         this.googleApiClient = googleApiClient;
         this.map = map;
-        db = Database.getInstance();
     }
 
     public Geofence createGeofence(LatLng latlng, String poiId) {
@@ -104,7 +102,7 @@ public class BlocSpotGeofence implements ResultCallback {
         if (geoFenceLimits != null) {
             geoFenceLimits.remove();
         }
-        RealmResults<PointOfInterest> poiList = db.getPoiList();
+        RealmResults<PointOfInterest> poiList = Database.getAllPois();
         for (PointOfInterest poi : poiList) {
             LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
             CircleOptions circleOptions = new CircleOptions()
@@ -118,7 +116,7 @@ public class BlocSpotGeofence implements ResultCallback {
 
     public void startGeofence() {
         Log.i(BlocSpotApp.TAG, "startGeofence");
-        RealmResults<PointOfInterest> poiList = db.getPoiList();
+        RealmResults<PointOfInterest> poiList = Database.getAllPois();
         for (PointOfInterest poi : poiList) {
             LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
             Geofence geofence = createGeofence(latLng, poi.getId());
@@ -129,7 +127,7 @@ public class BlocSpotGeofence implements ResultCallback {
 
     public void clearGeofence(){
         Log.i(BlocSpotApp.TAG, "clearGeofence");
-        RealmResults<PointOfInterest> poiList = db.getPoiList();
+        RealmResults<PointOfInterest> poiList = Database.getAllPois();
         ArrayList<String> poiIdList = new ArrayList<>();
         for (PointOfInterest poi : poiList) {
             poiIdList.add(poi.getId());

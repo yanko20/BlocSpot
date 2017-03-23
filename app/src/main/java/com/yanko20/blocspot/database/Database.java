@@ -5,6 +5,8 @@ import android.util.Log;
 import com.yanko20.blocspot.model.PointOfInterest;
 
 import io.realm.Realm;
+import io.realm.RealmModel;
+import io.realm.RealmObject;
 import io.realm.RealmResults;
 
 /**
@@ -13,47 +15,60 @@ import io.realm.RealmResults;
 
 public class Database {
 
-    public String TAG;
-    private Realm realmObj;
+    private static RealmResults<PointOfInterest> realmResultsPoiList = null;
 
-    private static Database instance = null;
+    public static void savePoi(final PointOfInterest poi){
+        Realm realm =  null;
+        try{
+            realm = Realm.getDefaultInstance();
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    realm.insertOrUpdate(poi);
+                }
 
-    private Database(){
-        TAG = "realmtag";
-        realmObj = Realm.getDefaultInstance();
-    }
-
-    public static Database getInstance(){
-        if(instance == null){
-            instance = new Database();
-        }
-        return instance;
-    }
-
-    public void savePoi(PointOfInterest poi){
-        realmObj.beginTransaction();
-        realmObj.copyToRealm(poi);
-        realmObj.commitTransaction();
-    }
-
-    public void queryData() {
-        RealmResults<PointOfInterest> results = realmObj
-                .where(PointOfInterest.class)
-                .findAll();
-        for(PointOfInterest resultPoi : results){
-            Log.d(TAG, resultPoi.toString());
+            });
+        }finally{
+            if(realm == null){
+                realm.close();
+            }
         }
     }
 
-    public RealmResults<PointOfInterest> getPoiList(){
-        RealmResults<PointOfInterest> results = realmObj
-                .where(PointOfInterest.class)
-                .findAll();
-        return results;
+    public static RealmResults<PointOfInterest> getAllPois(){
+        Realm realm =  null;
+        try{
+            realm = Realm.getDefaultInstance();
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    // todo question: how do I return value without using static realmResultsPoiList
+                    realmResultsPoiList =
+                            realm.where(PointOfInterest.class)
+                            .findAll();
+
+                }
+
+            });
+        }finally{
+            if(realm == null){
+                realm.close();
+            }
+        }
+        return realmResultsPoiList;
     }
 
-    public Realm getRealmObj() {
-        return realmObj;
-    }
+//    public void savePoi_old(PointOfInterest poi){
+//        realmObj.beginTransaction();
+//        realmObj.copyToRealm(poi);
+//        realmObj.commitTransaction();
+//    }
+//
+//    public RealmResults<PointOfInterest> getPoiList_old(){
+//        RealmResults<PointOfInterest> results = realmObj
+//                .where(PointOfInterest.class)
+//                .findAll();
+//        return results;
+//    }
 
 }
