@@ -4,11 +4,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuItem;
 
 import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
@@ -35,8 +37,17 @@ public class MainActivity extends AppCompatActivity {
         return super.onPrepareOptionsMenu(menu);
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId() == R.id.filter){
+            CategoryFragment categoryFragment = new CategoryFragment();
+            categoryFragment.show(getFragmentManager(), "tag");
+        }
+        return super.onOptionsItemSelected(item);
+    }
+
     public static Intent makeNotificationIntent(Context geofenceService, String msg){
-        Log.d(BlocSpotApp.TAG, "makeNotificationIntent mmsg: " + msg);
+        Log.d(BlocSpotApp.TAG, "makeNotificationIntent msg: " + msg);
         return new Intent(geofenceService, MainActivity.class);
     }
 }
