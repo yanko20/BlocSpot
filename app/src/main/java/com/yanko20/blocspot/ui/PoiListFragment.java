@@ -11,6 +11,7 @@ import android.view.ViewGroup;
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.PoiItemAdapter;
 import com.yanko20.blocspot.database.Database;
+import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
 import java.util.UUID;
 
@@ -42,7 +43,7 @@ public class PoiListFragment extends Fragment {
 
     private void dataSetup(){
 
-        //data
+        //create poi data
         PointOfInterest poiMachPichu = new PointOfInterest();
         poiMachPichu.setId(UUID.randomUUID().toString());
         poiMachPichu.setTitle("Machu Picchu");
@@ -56,8 +57,18 @@ public class PoiListFragment extends Fragment {
         poiKremlin.setLat(55.752023);
         poiKremlin.setLng(37.617499);
 
-        // database
+        // create category data
+        Category restaurants = new Category();
+        restaurants.setName("Restaurants");
+        restaurants.setColor("Green");
+        Category gasStations = new Category();
+        gasStations.setName("Gas Stations");
+        gasStations.setColor("Yellow");
+
+        // save to database
         Database.savePoi(poiMachPichu);
         Database.savePoi(poiKremlin);
+        Database.saveCategory(restaurants);
+        Database.saveCategory(gasStations);
     }
 }

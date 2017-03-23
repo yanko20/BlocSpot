@@ -2,6 +2,7 @@ package com.yanko20.blocspot.database;
 
 import android.util.Log;
 
+import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
 
 import io.realm.Realm;
@@ -16,6 +17,7 @@ import io.realm.RealmResults;
 public class Database {
 
     private static RealmResults<PointOfInterest> realmResultsPoiList = null;
+    private static RealmResults<Category> realmResultsCategoryList = null;
 
     public static void savePoi(final PointOfInterest poi){
         Realm realm =  null;
@@ -46,7 +48,6 @@ public class Database {
                     realmResultsPoiList =
                             realm.where(PointOfInterest.class)
                             .findAll();
-
                 }
 
             });
@@ -58,17 +59,43 @@ public class Database {
         return realmResultsPoiList;
     }
 
-//    public void savePoi_old(PointOfInterest poi){
-//        realmObj.beginTransaction();
-//        realmObj.copyToRealm(poi);
-//        realmObj.commitTransaction();
-//    }
-//
-//    public RealmResults<PointOfInterest> getPoiList_old(){
-//        RealmResults<PointOfInterest> results = realmObj
-//                .where(PointOfInterest.class)
-//                .findAll();
-//        return results;
-//    }
+    public static void saveCategory(final Category category){
+        Realm realm =  null;
+        try{
+            realm = Realm.getDefaultInstance();
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    realm.insertOrUpdate(category);
+                }
+
+            });
+        }finally{
+            if(realm == null){
+                realm.close();
+            }
+        }
+    }
+
+    public static RealmResults<Category> getAllCategories(){
+        Realm realm =  null;
+        try{
+            realm = Realm.getDefaultInstance();
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    realmResultsCategoryList =
+                            realm.where(Category.class)
+                                    .findAll();
+                }
+
+            });
+        }finally{
+            if(realm == null){
+                realm.close();
+            }
+        }
+        return realmResultsCategoryList;
+    }
 
 }
