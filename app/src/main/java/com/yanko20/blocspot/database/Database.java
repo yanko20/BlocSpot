@@ -88,7 +88,6 @@ public class Database {
                             realm.where(Category.class)
                                     .findAll();
                 }
-
             });
         }finally{
             if(realm == null){
