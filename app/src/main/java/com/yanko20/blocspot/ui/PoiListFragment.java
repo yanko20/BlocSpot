@@ -39,6 +39,4 @@ public class PoiListFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         return v;
     }
-
-
 }

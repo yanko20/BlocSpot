@@ -41,7 +41,6 @@ public class CategoryFragment extends DialogFragment{
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         CategoryAdapter adapter = new CategoryAdapter(Database.getAllCategories());
         recyclerView.setAdapter(adapter);
-        getDialog().setTitle("Choose Category");
         return view;
     }
 }
