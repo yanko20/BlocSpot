@@ -34,41 +34,11 @@ public class PoiListFragment extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.poi_list_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        dataSetup();
         RealmResults<PointOfInterest> dataSet = Database.getAllPois();
         adapter = new PoiItemAdapter(dataSet);
         recyclerView.setAdapter(adapter);
         return v;
     }
 
-    private void dataSetup(){
 
-        //create poi data
-        PointOfInterest poiMachPichu = new PointOfInterest();
-        poiMachPichu.setId(UUID.randomUUID().toString());
-        poiMachPichu.setTitle("Machu Picchu");
-        poiMachPichu.setDescription("This is not Kremlin, this is Machu Picchu!");
-        poiMachPichu.setLat(-13.163141);
-        poiMachPichu.setLng(-72.544963);
-        PointOfInterest poiKremlin = new PointOfInterest();
-        poiKremlin.setId(UUID.randomUUID().toString());
-        poiKremlin.setTitle("Kremlin");
-        poiKremlin.setDescription("This is Kremlin!");
-        poiKremlin.setLat(55.752023);
-        poiKremlin.setLng(37.617499);
-
-        // create category data
-        Category restaurants = new Category();
-        restaurants.setName("Restaurants");
-        restaurants.setColor("Green");
-        Category gasStations = new Category();
-        gasStations.setName("Gas Stations");
-        gasStations.setColor("Yellow");
-
-        // save to database
-        Database.savePoi(poiMachPichu);
-        Database.savePoi(poiKremlin);
-        Database.saveCategory(restaurants);
-        Database.saveCategory(gasStations);
-    }
 }
