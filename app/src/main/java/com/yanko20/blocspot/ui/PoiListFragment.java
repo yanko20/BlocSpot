@@ -31,7 +31,7 @@ public class PoiListFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_list, container, false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.recycler_view);
+        recyclerView = (RecyclerView) v.findViewById(R.id.poi_list_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         dataSetup();
