@@ -1,17 +1,13 @@
 package com.yanko20.blocspot.adapters;
 
-import android.support.v4.content.ContextCompat;
-import android.support.v7.view.menu.MenuView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.model.Category;
-import com.yanko20.blocspot.ui.UIUtils;
 
 import io.realm.RealmResults;
 
@@ -31,15 +27,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
     public CategoryHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.category_list_item, parent, false);
-        //view.setBackgroundColor();
-        view.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-        CategoryHolder holder = new CategoryHolder(view);
-        return holder;
+        return new CategoryHolder(view);
     }
 
     @Override
