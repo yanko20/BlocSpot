@@ -1,7 +1,6 @@
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
 
     <RelativeLayout
         android:id="@+id/category_header"
@@ -12,17 +11,26 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
             android:text="@string/category_header_title"
-            android:textAppearance="?android:attr/textAppearanceLargePopupMenu"/>
+            android:textAppearance="?android:attr/textAppearanceSearchResultTitle" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:background="@android:color/white"
+            android:src="@drawable/ic_add_black_36dp" />
 
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/category_list_recycler_view"
-        android:layout_below="@+id/category_header"
-        android:scrollbars="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/category_header"
+        android:scrollbars="vertical" />
 
 </RelativeLayout>
 
