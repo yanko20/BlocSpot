@@ -10,11 +10,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.PoiItemAdapter;
-import com.yanko20.blocspot.database.Database;
-import com.yanko20.blocspot.model.Category;
+import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.PointOfInterest;
-import java.util.UUID;
 
+import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
@@ -25,6 +24,7 @@ public class PoiListFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
+    private Realm realm;
 
     @Nullable
     @Override
@@ -34,9 +34,16 @@ public class PoiListFragment extends Fragment {
         recyclerView = (RecyclerView) v.findViewById(R.id.poi_list_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        RealmResults<PointOfInterest> dataSet = Database.getAllPois();
+        realm = Realm.getDefaultInstance();
+        RealmResults<PointOfInterest> dataSet = DataHelper.getAllPois(realm);
         adapter = new PoiItemAdapter(dataSet);
         recyclerView.setAdapter(adapter);
         return v;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        realm.close();
     }
 }

@@ -29,10 +29,11 @@ import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
-import com.yanko20.blocspot.database.Database;
+import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.geo.BlocSpotGeofence;
 import com.yanko20.blocspot.model.PointOfInterest;
 
+import io.realm.Realm;
 import io.realm.RealmResults;
 
 import static android.content.ContentValues.TAG;
@@ -55,8 +56,9 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     private final int FASTEST_INTERVAL = 900;
     private static boolean isCenteredToCurrentLocation = false;
 
-
     private static GoogleMap map;
+    private Realm realm;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -73,6 +75,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
                     .addApi(LocationServices.API)
                     .build();
         }
+
         return googleApiClient;
     }
 
@@ -100,14 +103,21 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
         mapView.getMapAsync(this);
+        realm = Realm.getDefaultInstance();
         return view;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        realm.close();
     }
 
     @Override
     public void onMapReady(GoogleMap map) {
         Log.d(BlocSpotApp.TAG, "onMapReady()");
         PoiMapFragment.map = map;
-        RealmResults<PointOfInterest> poiList = Database.getAllPois();
+        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois(realm);
         for (PointOfInterest poi : poiList) {
             map.addMarker(new MarkerOptions()
                     .position(new LatLng(poi.getLat(), poi.getLng()))
@@ -144,9 +154,6 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
             if (BlocSpotApp.checkPermission()) {
                 map.setMyLocationEnabled(true);
                 centerToCurrentLocation();
-                BlocSpotGeofence blocSpotGeofence = new BlocSpotGeofence(googleApiClient, map);
-                blocSpotGeofence.clearGeofence();
-                blocSpotGeofence.startGeofence();
             }
         }
     }
@@ -175,6 +182,9 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     public void onConnected(@Nullable Bundle bundle) {
         Log.v(BlocSpotApp.TAG, "GoogleApiClient onConnected()");
         getLastKnownLocation();
+        BlocSpotGeofence blocSpotGeofence = new BlocSpotGeofence(googleApiClient, map, realm);
+        blocSpotGeofence.clearGeofence();
+        blocSpotGeofence.startGeofence();
     }
 
     public void getLastKnownLocation() {

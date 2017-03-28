@@ -1,13 +1,12 @@
 package com.yanko20.blocspot;
 
-import android.*;
 import android.app.Application;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 
-import com.yanko20.blocspot.database.Database;
+import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
 import com.yanko20.blocspot.ui.UIUtils;
@@ -79,9 +78,11 @@ public class BlocSpotApp extends Application {
         gasStations.setColor(UIUtils.generateRandomColor());
 
         // save to database
-        Database.savePoi(poiMachPichu);
-        Database.savePoi(poiKremlin);
-        Database.saveCategory(restaurants);
-        Database.saveCategory(gasStations);
+        Realm realm = Realm.getDefaultInstance();
+        DataHelper.savePoi(realm, poiMachPichu);
+        DataHelper.savePoi(realm, poiKremlin);
+        DataHelper.saveCategory(realm, restaurants);
+        DataHelper.saveCategory(realm, gasStations);
+        realm.close();
     }
 }
