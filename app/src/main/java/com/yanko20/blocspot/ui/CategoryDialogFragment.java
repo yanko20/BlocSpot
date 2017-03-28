@@ -37,7 +37,8 @@ public class CategoryDialogFragment extends DialogFragment{
         addCategoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new AddCategoryDialogFragment().show(getFragmentManager(), "AddCategoryDialogFragmentTag");
+                new AddCategoryDialogFragment()
+                        .show(getFragmentManager(), AddCategoryDialogFragment.DIALOG_TAG);
             }
         });
         return view;

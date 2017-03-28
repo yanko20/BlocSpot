@@ -17,6 +17,7 @@ public class PointOfInterest implements RealmModel{
     private String description;
     private double lat;
     private double lng;
+    private String category;
 
     public String getId() {
         return id;
@@ -56,5 +57,13 @@ public class PointOfInterest implements RealmModel{
 
     public void setLng(double lng) {
         this.lng = lng;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

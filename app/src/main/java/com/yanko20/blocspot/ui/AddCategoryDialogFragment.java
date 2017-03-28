@@ -25,6 +25,7 @@ import io.realm.Realm;
 public class AddCategoryDialogFragment extends DialogFragment {
 
     private Realm realm;
+    public static final String DIALOG_TAG = "AddCategoryDialogFragmentTag";
 
 
     @Override
