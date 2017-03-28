@@ -1,6 +1,7 @@
 package com.yanko20.blocspot.adapters;
 
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +22,7 @@ import io.realm.RealmResults;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder> {
 
     private RealmResults<Category> dataSet;
+    private static final String logTag = "CategoryAdapter.class";
 
     public CategoryAdapter(RealmResults<Category> dataSet) {
         this.dataSet = dataSet;
@@ -28,6 +30,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     @Override
     public CategoryHolder onCreateViewHolder(final ViewGroup parent, int viewType) {
+        Log.d(logTag, "onCreateViewHolder");
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.category_list_item, parent, false);
         return new CategoryHolder(view);
@@ -35,6 +38,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     @Override
     public void onBindViewHolder(CategoryHolder holder, int position) {
+        Log.d(logTag, "onBindViewHolder");
         Category[] categories = dataSet.toArray(new Category[dataSet.size()]);
         holder.itemView.setBackgroundColor(categories[position].getColor());
         holder.textView.setText(categories[position].getName());
@@ -53,6 +57,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
         public CategoryHolder(View itemView) {
             super(itemView);
+            Log.d(logTag, "CategoryHolder");
             this.itemView = itemView;
             textView = (TextView) itemView.findViewById(R.id.category_list_item_text_view);
             checkBox = (CheckBox) itemView.findViewById(R.id.category_list_item_checkbox);
