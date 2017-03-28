@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.filter){
-            CategoryFragment categoryFragment = new CategoryFragment();
-            categoryFragment.show(getFragmentManager(), "tag");
+            CategoryDialogFragment categoryDialogFragment = new CategoryDialogFragment();
+            categoryDialogFragment.show(getFragmentManager(), "tag");
         }
         return super.onOptionsItemSelected(item);
     }

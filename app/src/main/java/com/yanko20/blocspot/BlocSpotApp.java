@@ -68,21 +68,15 @@ public class BlocSpotApp extends Application {
         poiKremlin.setLat(55.752023);
         poiKremlin.setLng(37.617499);
 
-        // create category data
-        Category restaurants = new Category();
-        restaurants.setName("Restaurants");
-        // todo question - how do I persist colors between app restarts
-        restaurants.setColor(UIUtils.generateRandomColor());
-        Category gasStations = new Category();
-        gasStations.setName("Gas Stations");
-        gasStations.setColor(UIUtils.generateRandomColor());
-
         // save to database
         Realm realm = Realm.getDefaultInstance();
         DataHelper.savePoi(realm, poiMachPichu);
         DataHelper.savePoi(realm, poiKremlin);
-        DataHelper.saveCategory(realm, restaurants);
-        DataHelper.saveCategory(realm, gasStations);
+        DataHelper.saveCategory(realm, new Category("Restaurants"));
+        DataHelper.saveCategory(realm, new Category("Gas Stations"));
+        DataHelper.saveCategory(realm, new Category("Alexandra's Boutiques"));
+        DataHelper.saveCategory(realm, new Category("Alexandra's Fashion Shows"));
+
         realm.close();
     }
 }

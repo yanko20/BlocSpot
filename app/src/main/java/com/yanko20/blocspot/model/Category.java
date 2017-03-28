@@ -1,5 +1,7 @@
 package com.yanko20.blocspot.model;
 
+import com.yanko20.blocspot.ui.UIUtils;
+
 import io.realm.RealmModel;
 import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
@@ -15,6 +17,13 @@ public class Category implements RealmModel{
     @PrimaryKey
     private String name;
     private int color;
+
+    public Category(){}
+
+    public Category(String name){
+        setName(name);
+        setColor(UIUtils.generateRandomColor());
+    }
 
     public String getName() {
         return name;
