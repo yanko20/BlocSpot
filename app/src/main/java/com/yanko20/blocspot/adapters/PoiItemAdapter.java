@@ -1,16 +1,16 @@
 package com.yanko20.blocspot.adapters;
 
+import android.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.model.PointOfInterest;
-
-import java.util.ArrayList;
+import com.yanko20.blocspot.ui.AddCategoryDialogFragment;
+import com.yanko20.blocspot.ui.CategoryDialogFragment;
 
 import io.realm.RealmResults;
 
@@ -21,9 +21,11 @@ import io.realm.RealmResults;
 public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemViewHolder>{
 
     private RealmResults<PointOfInterest> dataSet;
+    private FragmentManager fragmentManager;
 
-    public PoiItemAdapter(RealmResults<PointOfInterest> dataSet){
+    public PoiItemAdapter(RealmResults<PointOfInterest> dataSet, FragmentManager fragmentManager){
         this.dataSet = dataSet;
+        this.fragmentManager = fragmentManager;
     }
 
     @Override
@@ -63,6 +65,13 @@ public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemV
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.poi_item_title);
             description = (TextView) itemView.findViewById(R.id.poi_item_description);
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    new CategoryDialogFragment().show(fragmentManager, CategoryDialogFragment.DIALOG_TAG);
+                    return true;
+                }
+            });
         }
 
     }

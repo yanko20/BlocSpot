@@ -74,8 +74,9 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                    // todo refactor two functional modes: assign category and filter by category
                     Toast.makeText(buttonView.getContext(),
-                            "isChecked: " + isChecked, Toast.LENGTH_SHORT).show();
+                            textView.getText().toString() + " isChecked: " + isChecked, Toast.LENGTH_SHORT).show();
                 }
             });
         }

@@ -30,15 +30,16 @@ public class PoiListFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragment_list, container, false);
-        recyclerView = (RecyclerView) v.findViewById(R.id.poi_list_recycler_view);
+        View fragmentListView = inflater.inflate(R.layout.fragment_list, container, false);
+        recyclerView = (RecyclerView) fragmentListView.findViewById(R.id.poi_list_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         realm = Realm.getDefaultInstance();
         RealmResults<PointOfInterest> dataSet = DataHelper.getAllPois(realm);
-        adapter = new PoiItemAdapter(dataSet);
+
+        adapter = new PoiItemAdapter(dataSet, getActivity().getFragmentManager());
         recyclerView.setAdapter(adapter);
-        return v;
+        return fragmentListView;
     }
 
     @Override

@@ -1,5 +1,6 @@
 package com.yanko20.blocspot.model;
 
+import io.realm.RealmList;
 import io.realm.RealmModel;
 import io.realm.annotations.PrimaryKey;
 import io.realm.annotations.RealmClass;
@@ -17,7 +18,7 @@ public class PointOfInterest implements RealmModel{
     private String description;
     private double lat;
     private double lng;
-    private String category;
+    private RealmList<Category> categories;
 
     public String getId() {
         return id;
@@ -59,11 +60,11 @@ public class PointOfInterest implements RealmModel{
         this.lng = lng;
     }
 
-    public String getCategory() {
-        return category;
+    public RealmList<Category> getCategories() {
+        return categories;
     }
 
-    public void setCategory(String category) {
-        this.category = category;
+    public void setCategories(RealmList<Category> categories) {
+        this.categories = categories;
     }
 }

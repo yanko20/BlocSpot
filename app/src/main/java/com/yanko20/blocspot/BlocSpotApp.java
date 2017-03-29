@@ -36,9 +36,9 @@ public class BlocSpotApp extends Application {
         Realm.init(this);
         RealmConfiguration realmConfiguration =
                 new RealmConfiguration.Builder().name("blocspot.realm").build();
-        //Realm.deleteRealm(realmConfiguration);
+        Realm.deleteRealm(realmConfiguration);
         Realm.setDefaultConfiguration(realmConfiguration);
-        //dataSetup();
+        dataSetup();
     }
 
     public static Context getAppContext(){
