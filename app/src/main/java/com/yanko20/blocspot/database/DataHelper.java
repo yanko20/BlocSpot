@@ -41,4 +41,18 @@ public class DataHelper {
                 .findAll();
     }
 
+    public static PointOfInterest getPoi(Realm realm, String id){
+        return realm.where(PointOfInterest.class).equalTo("id", id).findFirst();
+    }
+
+    public static void addCategoryToPoi(Realm realm, final PointOfInterest poi, final Category category){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                poi.getCategories().add(category);
+                realm.insertOrUpdate(poi);
+            }
+        });
+    }
+
 }

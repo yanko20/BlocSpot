@@ -1,6 +1,7 @@
 package com.yanko20.blocspot.adapters;
 
 import android.app.FragmentManager;
+import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -47,6 +48,7 @@ public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemV
     @Override
     public void onBindViewHolder(PoiItemViewHolder holder, int position) {
         PointOfInterest poi = dataSet.get(position);
+        holder.setId(poi.getId());
         holder.title.setText(poi.getTitle());
         holder.description.setText(poi.getDescription());
     }
@@ -60,18 +62,28 @@ public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemV
 
         public TextView title;
         public TextView description;
+        private String id;
+        public static final String POI_ID_KEY = "poiId";
 
-        public PoiItemViewHolder(View itemView) {
+        public PoiItemViewHolder(final View itemView) {
             super(itemView);
             title = (TextView) itemView.findViewById(R.id.poi_item_title);
             description = (TextView) itemView.findViewById(R.id.poi_item_description);
             itemView.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override
                 public boolean onLongClick(View v) {
-                    new CategoryDialogFragment().show(fragmentManager, CategoryDialogFragment.DIALOG_TAG);
+                    Bundle bundle = new Bundle();
+                    bundle.putString(POI_ID_KEY, id);
+                    CategoryDialogFragment fragment = new CategoryDialogFragment();
+                    fragment.setArguments(bundle);
+                    fragment.show(fragmentManager, CategoryDialogFragment.DIALOG_TAG);
                     return true;
                 }
             });
+        }
+
+        public void setId(String poiId){
+            this.id = poiId;
         }
 
     }

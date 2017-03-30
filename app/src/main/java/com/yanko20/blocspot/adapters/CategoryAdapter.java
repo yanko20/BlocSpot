@@ -11,8 +11,11 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.yanko20.blocspot.R;
+import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
+import com.yanko20.blocspot.model.PointOfInterest;
 
+import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
@@ -22,10 +25,14 @@ import io.realm.RealmResults;
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder> {
 
     private RealmResults<Category> dataSet;
+    private String poiId;
+    private Realm realm;
     private static final String logTag = "CategoryAdapter.class";
 
-    public CategoryAdapter(RealmResults<Category> dataSet) {
-        this.dataSet = dataSet;
+    public CategoryAdapter(String poiId, Realm realm) {
+        this.realm = realm;
+        this.dataSet = DataHelper.getAllCategories(this.realm);
+        this.poiId = poiId;
     }
 
     @Override
@@ -77,6 +84,15 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                     // todo refactor two functional modes: assign category and filter by category
                     Toast.makeText(buttonView.getContext(),
                             textView.getText().toString() + " isChecked: " + isChecked, Toast.LENGTH_SHORT).show();
+                    if(isChecked){
+                        // assign category
+                        PointOfInterest poi = DataHelper.getPoi(realm, poiId);
+                        String name = textView.getText().toString();
+                        Category category = new Category(name);
+                        DataHelper.addCategoryToPoi(realm, poi, category);
+                    } else{
+                        // todo DataHelper.addCategoryToPoi()
+                    }
                 }
             });
         }

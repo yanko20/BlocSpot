@@ -12,6 +12,7 @@ import android.widget.ImageButton;
 
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.CategoryAdapter;
+import com.yanko20.blocspot.adapters.PoiItemAdapter;
 import com.yanko20.blocspot.database.DataHelper;
 
 import io.realm.Realm;
@@ -33,7 +34,9 @@ public class CategoryDialogFragment extends DialogFragment{
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.category_list_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         realm = Realm.getDefaultInstance();
-        CategoryAdapter adapter = new CategoryAdapter(DataHelper.getAllCategories(realm));
+        Bundle bundle = this.getArguments();
+        String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
+        CategoryAdapter adapter = new CategoryAdapter(poiId, realm);
         recyclerView.setAdapter(adapter);
         addCategoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
