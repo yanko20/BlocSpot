@@ -2,9 +2,11 @@ package com.yanko20.blocspot.ui;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,17 +16,32 @@ import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.CategoryAdapter;
 import com.yanko20.blocspot.adapters.PoiItemAdapter;
 import com.yanko20.blocspot.database.DataHelper;
+import com.yanko20.blocspot.model.Category;
+import com.yanko20.blocspot.model.PointOfInterest;
 
+import io.realm.OrderedCollectionChangeSet;
+import io.realm.OrderedRealmCollectionChangeListener;
 import io.realm.Realm;
+import io.realm.RealmChangeListener;
+import io.realm.RealmList;
+import io.realm.RealmResults;
 
 /**
  * Created by ykomizor on 3/22/2017.
  */
 
-public class CategoryDialogFragment extends DialogFragment{
+public class CategoryDialogFragment extends DialogFragment {
 
     private Realm realm;
     public static final String DIALOG_TAG = "AddCategoryDialogFragmentTag";
+    public static final String logTag = "CategoryDialFrag.class";
+    private final OrderedRealmCollectionChangeListener<RealmList<Category>> categoryListener =
+            new OrderedRealmCollectionChangeListener<RealmList<Category>>() {
+                @Override
+                public void onChange(RealmList<Category> collection, OrderedCollectionChangeSet changeSet) {
+                    Log.d(logTag, "RealmChangeListener");
+                }
+            };
 
     @Nullable
     @Override
@@ -36,7 +53,7 @@ public class CategoryDialogFragment extends DialogFragment{
         realm = Realm.getDefaultInstance();
         Bundle bundle = this.getArguments();
         String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
-        CategoryAdapter adapter = new CategoryAdapter(poiId, realm);
+        final CategoryAdapter adapter = new CategoryAdapter(poiId, realm);
         recyclerView.setAdapter(adapter);
         addCategoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,12 +62,37 @@ public class CategoryDialogFragment extends DialogFragment{
                         .show(getFragmentManager(), AddCategoryDialogFragment.DIALOG_TAG);
             }
         });
+        // todo notifyDataSetChanged(); when new item is added to categories
+        ////////// realm notifications/////////////
+
+        realm.addChangeListener(new RealmChangeListener<Realm>() {
+            @Override
+            public void onChange(Realm element) {
+                Log.d(logTag, "RealmChangeListener");
+                adapter.notifyDataSetChanged();
+            }
+        });
+
+        // todo question: why OrderedRealmCollectionChangeListener.onChange work intermittently?
+//        OrderedRealmCollectionChangeListener cl = new OrderedRealmCollectionChangeListener<RealmResults<Category>>() {
+//            @Override
+//            public void onChange(RealmResults<Category> collection, OrderedCollectionChangeSet changeSet) {
+//                Log.d(logTag, "OrderedRealmCollectionChangeListener");
+//                adapter.notifyDataSetChanged();
+//            }
+//        };
+//        DataHelper.getAllCategories(realm).addChangeListener(cl);
+
+///////////////////////////////////////////////////////////
+
+
         return view;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        realm.removeAllChangeListeners();
         realm.close();
     }
 }

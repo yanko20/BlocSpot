@@ -4,7 +4,6 @@ import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
 
 import io.realm.Realm;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
@@ -58,7 +57,7 @@ public class DataHelper {
         });
     }
 
-    public static void removeCategoryFromPoi(Realm realm, final PointOfInterest poi, final String categoryName){
+    public static void removeCategoryFromPoi(Realm realm, final PointOfInterest poi, final String categoryName) {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -71,7 +70,7 @@ public class DataHelper {
         });
     }
 
-    public static boolean isCategoryAssignedToPoi(Realm realm, PointOfInterest poi, String categoryName){
+    public static boolean isCategoryAssignedToPoi(Realm realm, PointOfInterest poi, String categoryName) {
         Category category = poi.getCategories()
                 .where()
                 .equalTo("name", categoryName).findFirst();

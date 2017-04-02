@@ -1,6 +1,5 @@
 package com.yanko20.blocspot.adapters;
 
-import android.provider.ContactsContract;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,16 +15,14 @@ import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
 
-import java.util.Iterator;
-
 import io.realm.Realm;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
  * Created by yanko on 3/24/2017.
  */
 
+// todo maybe convert to RealmRecyclerViewAdapter
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder> {
 
     private RealmResults<Category> dataSet;
@@ -37,8 +34,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         this.realm = realm;
         this.dataSet = DataHelper.getAllCategories(this.realm);
         this.poi = DataHelper.getPoi(realm, poiId);
-
-
     }
 
     @Override
@@ -71,7 +66,6 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         private TextView textView;
         private View itemView;
         private CheckBox checkBox;
-
 
         public CategoryHolder(View itemView) {
             super(itemView);
