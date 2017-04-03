@@ -11,6 +11,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.CategoryAdapter;
@@ -43,15 +44,17 @@ public class CategoryDialogFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.category_list, container);
-        ImageButton addCategoryButton = (ImageButton) view.findViewById(R.id.add_category_button);
-        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.category_list_recycler_view);
+        View categoryListView = inflater.inflate(R.layout.category_list, container);
+        TextView categoryListViewTitle = (TextView) categoryListView.findViewById(R.id.category_list_view_title);
+        ImageButton addCategoryButton = (ImageButton) categoryListView.findViewById(R.id.add_category_button);
+        RecyclerView recyclerView = (RecyclerView) categoryListView.findViewById(R.id.category_list_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         realm = Realm.getDefaultInstance();
         Bundle bundle = this.getArguments();
 
         String mode = bundle.getString(MODE_KEY);
         if(mode == ASSIGN_MODE){
+            categoryListViewTitle.setText(R.string.assign_category_list_title);
             String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
             final CategoryAdapter adapter = new CategoryAdapter(poiId, realm);
             recyclerView.setAdapter(adapter);
@@ -63,6 +66,7 @@ public class CategoryDialogFragment extends DialogFragment {
             };
             DataHelper.getAllCategories(realm).addChangeListener(categoriesChangeListener);
         } else if(mode == FILTER_MODE){
+            categoryListViewTitle.setText(R.string.filter_category_list_title);
             FilterCategoryAdapter filterCategoryAdapter =
                     new FilterCategoryAdapter(DataHelper.getAllCategories(realm), true);
             recyclerView.setAdapter(filterCategoryAdapter);
@@ -76,7 +80,7 @@ public class CategoryDialogFragment extends DialogFragment {
             }
         });
 
-        return view;
+        return categoryListView;
     }
 
 

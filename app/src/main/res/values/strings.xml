@@ -2,7 +2,9 @@
     <string name="app_name">BlocSpot</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="filter">Filter icon</string>
-    <string name="category_header_title">Choose Category</string>
+    <string name="category_header_title">Categories</string>
+    <string name="assign_category_list_title">Assign category</string>
+    <string name="filter_category_list_title">Filter by category</string>
     <string name="add_category">ADD</string>
     <string name="cancel_add_category">CANCEL</string>
 </resources>
