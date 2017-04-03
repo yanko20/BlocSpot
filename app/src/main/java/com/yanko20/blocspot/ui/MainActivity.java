@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.filter){
             CategoryDialogFragment categoryDialogFragment = new CategoryDialogFragment();
-            categoryDialogFragment.show(getFragmentManager(), "tag");
+            categoryDialogFragment.show(getFragmentManager(), CategoryDialogFragment.DIALOG_TAG);
         }
         return super.onOptionsItemSelected(item);
     }
