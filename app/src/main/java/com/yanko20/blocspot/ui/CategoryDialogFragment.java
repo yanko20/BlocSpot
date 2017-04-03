@@ -62,30 +62,13 @@ public class CategoryDialogFragment extends DialogFragment {
                         .show(getFragmentManager(), AddCategoryDialogFragment.DIALOG_TAG);
             }
         });
-        // todo notifyDataSetChanged(); when new item is added to categories
-        ////////// realm notifications/////////////
-
-        realm.addChangeListener(new RealmChangeListener<Realm>() {
+        OrderedRealmCollectionChangeListener categoriesChangeListener = new OrderedRealmCollectionChangeListener<RealmResults<Category>>() {
             @Override
-            public void onChange(Realm element) {
-                Log.d(logTag, "RealmChangeListener");
+            public void onChange(RealmResults<Category> collection, OrderedCollectionChangeSet changeSet) {
                 adapter.notifyDataSetChanged();
             }
-        });
-
-        // todo question: why OrderedRealmCollectionChangeListener.onChange work intermittently?
-//        OrderedRealmCollectionChangeListener cl = new OrderedRealmCollectionChangeListener<RealmResults<Category>>() {
-//            @Override
-//            public void onChange(RealmResults<Category> collection, OrderedCollectionChangeSet changeSet) {
-//                Log.d(logTag, "OrderedRealmCollectionChangeListener");
-//                adapter.notifyDataSetChanged();
-//            }
-//        };
-//        DataHelper.getAllCategories(realm).addChangeListener(cl);
-
-///////////////////////////////////////////////////////////
-
-
+        };
+        DataHelper.getAllCategories(realm).addChangeListener(categoriesChangeListener);
         return view;
     }
 
