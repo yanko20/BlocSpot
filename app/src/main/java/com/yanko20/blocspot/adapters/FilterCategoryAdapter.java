@@ -38,10 +38,22 @@ public class FilterCategoryAdapter extends
     }
 
     @Override
-    public void onBindViewHolder(FilterCategoryHolder holder, int position) {
+    public void onBindViewHolder(final FilterCategoryHolder holder, int position) {
         Category category = categories.get(position);
         holder.itemView.setBackgroundColor(category.getColor());
         holder.textView.setText(category.getName());
+        holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Toast.makeText(holder.checkBox.getContext(), "Filter..", Toast.LENGTH_SHORT).show();
+                if (isChecked) {
+
+                } else {
+
+                }
+
+            }
+        });
     }
 
     public class FilterCategoryHolder extends RecyclerView.ViewHolder {
@@ -64,12 +76,7 @@ public class FilterCategoryAdapter extends
                     }
                 }
             });
-            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-                @Override
-                public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    Toast.makeText(itemView.getContext(), "Filter..", Toast.LENGTH_SHORT).show();
-                }
-            });
+
         }
     }
 }

@@ -17,6 +17,7 @@ public class Category implements RealmModel{
     @PrimaryKey
     private String name;
     private int color;
+    private boolean isFilter;
 
     public Category(){}
 
@@ -39,5 +40,13 @@ public class Category implements RealmModel{
 
     public void setColor(int color) {
         this.color = color;
+    }
+
+    public boolean isFilter() {
+        return isFilter;
+    }
+
+    public void setFilter(boolean filter) {
+        isFilter = filter;
     }
 }
