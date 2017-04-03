@@ -39,7 +39,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId() == R.id.filter){
+            Bundle bundle = new Bundle();
+            bundle.putString(CategoryDialogFragment.MODE_KEY,
+                    CategoryDialogFragment.FILTER_MODE);
             CategoryDialogFragment categoryDialogFragment = new CategoryDialogFragment();
+            categoryDialogFragment.setArguments(bundle);
             categoryDialogFragment.show(getFragmentManager(), CategoryDialogFragment.DIALOG_TAG);
         }
         return super.onOptionsItemSelected(item);

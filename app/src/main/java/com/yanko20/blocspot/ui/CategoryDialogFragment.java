@@ -14,6 +14,7 @@ import android.widget.ImageButton;
 
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.CategoryAdapter;
+import com.yanko20.blocspot.adapters.FilterCategoryAdapter;
 import com.yanko20.blocspot.adapters.PoiItemAdapter;
 import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
@@ -35,13 +36,9 @@ public class CategoryDialogFragment extends DialogFragment {
     private Realm realm;
     public static final String DIALOG_TAG = "AddCategoryDialogFragmentTag";
     public static final String logTag = "CategoryDialFrag.class";
-    private final OrderedRealmCollectionChangeListener<RealmList<Category>> categoryListener =
-            new OrderedRealmCollectionChangeListener<RealmList<Category>>() {
-                @Override
-                public void onChange(RealmList<Category> collection, OrderedCollectionChangeSet changeSet) {
-                    Log.d(logTag, "RealmChangeListener");
-                }
-            };
+    public static final String MODE_KEY = "modeKey";
+    public static final String ASSIGN_MODE = "assignMode";
+    public static final String FILTER_MODE = "filterMode";
 
     @Nullable
     @Override
@@ -52,9 +49,25 @@ public class CategoryDialogFragment extends DialogFragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
         realm = Realm.getDefaultInstance();
         Bundle bundle = this.getArguments();
-        String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
-        final CategoryAdapter adapter = new CategoryAdapter(poiId, realm);
-        recyclerView.setAdapter(adapter);
+
+        String mode = bundle.getString(MODE_KEY);
+        if(mode == ASSIGN_MODE){
+            String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
+            final CategoryAdapter adapter = new CategoryAdapter(poiId, realm);
+            recyclerView.setAdapter(adapter);
+            OrderedRealmCollectionChangeListener categoriesChangeListener = new OrderedRealmCollectionChangeListener<RealmResults<Category>>() {
+                @Override
+                public void onChange(RealmResults<Category> collection, OrderedCollectionChangeSet changeSet) {
+                    adapter.notifyDataSetChanged();
+                }
+            };
+            DataHelper.getAllCategories(realm).addChangeListener(categoriesChangeListener);
+        } else if(mode == FILTER_MODE){
+            FilterCategoryAdapter filterCategoryAdapter =
+                    new FilterCategoryAdapter(DataHelper.getAllCategories(realm), true);
+            recyclerView.setAdapter(filterCategoryAdapter);
+        }
+
         addCategoryButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,15 +75,12 @@ public class CategoryDialogFragment extends DialogFragment {
                         .show(getFragmentManager(), AddCategoryDialogFragment.DIALOG_TAG);
             }
         });
-        OrderedRealmCollectionChangeListener categoriesChangeListener = new OrderedRealmCollectionChangeListener<RealmResults<Category>>() {
-            @Override
-            public void onChange(RealmResults<Category> collection, OrderedCollectionChangeSet changeSet) {
-                adapter.notifyDataSetChanged();
-            }
-        };
-        DataHelper.getAllCategories(realm).addChangeListener(categoriesChangeListener);
+
         return view;
     }
+
+
+
 
     @Override
     public void onDestroyView() {

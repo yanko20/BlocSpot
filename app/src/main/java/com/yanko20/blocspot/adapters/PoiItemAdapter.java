@@ -74,6 +74,7 @@ public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemV
                 public boolean onLongClick(View v) {
                     Bundle bundle = new Bundle();
                     bundle.putString(POI_ID_KEY, id);
+                    bundle.putString(CategoryDialogFragment.MODE_KEY, CategoryDialogFragment.FILTER_MODE);
                     CategoryDialogFragment fragment = new CategoryDialogFragment();
                     fragment.setArguments(bundle);
                     fragment.show(fragmentManager, CategoryDialogFragment.DIALOG_TAG);
