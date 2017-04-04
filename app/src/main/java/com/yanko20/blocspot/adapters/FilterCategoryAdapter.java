@@ -9,12 +9,13 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.yanko20.blocspot.R;
+import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
-
 import io.realm.OrderedRealmCollection;
+import io.realm.Realm;
 import io.realm.RealmRecyclerViewAdapter;
+import io.realm.RealmResults;
 
 /**
  * Created by yanko on 4/3/2017.
@@ -24,10 +25,12 @@ public class FilterCategoryAdapter extends
         RealmRecyclerViewAdapter<Category, FilterCategoryAdapter.FilterCategoryHolder> {
 
     private OrderedRealmCollection<Category> categories;
+    private Realm realm;
 
-    public FilterCategoryAdapter(@Nullable OrderedRealmCollection<Category> categories, boolean autoUpdate) {
+    public FilterCategoryAdapter(Realm realm, @Nullable OrderedRealmCollection<Category> categories, boolean autoUpdate) {
         super(categories, autoUpdate);
         this.categories = categories;
+        this.realm = realm;
     }
 
     @Override
@@ -39,7 +42,7 @@ public class FilterCategoryAdapter extends
 
     @Override
     public void onBindViewHolder(final FilterCategoryHolder holder, int position) {
-        Category category = categories.get(position);
+        final Category category = categories.get(position);
         holder.itemView.setBackgroundColor(category.getColor());
         holder.textView.setText(category.getName());
         holder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
@@ -47,22 +50,24 @@ public class FilterCategoryAdapter extends
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Toast.makeText(holder.checkBox.getContext(), "Filter..", Toast.LENGTH_SHORT).show();
                 if (isChecked) {
-
+                    DataHelper.setCategoryFilter(realm, category, true);
                 } else {
-
+                    DataHelper.setCategoryFilter(realm, category, false);
                 }
 
             }
         });
+        holder.checkBox.setChecked(category.isFilter());
+
     }
 
     public class FilterCategoryHolder extends RecyclerView.ViewHolder {
 
-        public TextView textView;
+        private TextView textView;
         private CheckBox checkBox;
 
 
-        public FilterCategoryHolder(final View itemView) {
+        public FilterCategoryHolder(View itemView) {
             super(itemView);
             textView = (TextView) itemView.findViewById(R.id.category_list_item_text_view);
             checkBox = (CheckBox) itemView.findViewById(R.id.category_list_item_checkbox);

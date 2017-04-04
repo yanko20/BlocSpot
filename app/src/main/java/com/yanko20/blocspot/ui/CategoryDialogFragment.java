@@ -68,7 +68,7 @@ public class CategoryDialogFragment extends DialogFragment {
         } else if(mode == FILTER_MODE){
             categoryListViewTitle.setText(R.string.filter_category_list_title);
             FilterCategoryAdapter filterCategoryAdapter =
-                    new FilterCategoryAdapter(DataHelper.getAllCategories(realm), true);
+                    new FilterCategoryAdapter(realm, DataHelper.getAllCategories(realm), true);
             recyclerView.setAdapter(filterCategoryAdapter);
         }
 

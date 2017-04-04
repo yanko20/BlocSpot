@@ -76,4 +76,13 @@ public class DataHelper {
                 .equalTo("name", categoryName).findFirst();
         return category == null ? false : true;
     }
+
+    public static void setCategoryFilter(Realm realm, final Category category, final boolean isFilter){
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                category.setFilter(isFilter);
+            }
+        });
+    }
 }
