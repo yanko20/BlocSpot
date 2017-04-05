@@ -2,11 +2,9 @@ package com.yanko20.blocspot.ui;
 
 import android.app.DialogFragment;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,13 +17,10 @@ import com.yanko20.blocspot.adapters.FilterCategoryAdapter;
 import com.yanko20.blocspot.adapters.PoiItemAdapter;
 import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
-import com.yanko20.blocspot.model.PointOfInterest;
 
 import io.realm.OrderedCollectionChangeSet;
 import io.realm.OrderedRealmCollectionChangeListener;
 import io.realm.Realm;
-import io.realm.RealmChangeListener;
-import io.realm.RealmList;
 import io.realm.RealmResults;
 
 /**
@@ -53,7 +48,7 @@ public class CategoryDialogFragment extends DialogFragment {
         Bundle bundle = this.getArguments();
 
         String mode = bundle.getString(MODE_KEY);
-        if(mode == ASSIGN_MODE){
+        if (mode == ASSIGN_MODE) {
             categoryListViewTitle.setText(R.string.assign_category_list_title);
             String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
             final CategoryAdapter adapter = new CategoryAdapter(poiId, realm);
@@ -65,10 +60,10 @@ public class CategoryDialogFragment extends DialogFragment {
                 }
             };
             DataHelper.getAllCategories(realm).addChangeListener(categoriesChangeListener);
-        } else if(mode == FILTER_MODE){
+        } else if (mode == FILTER_MODE) {
             categoryListViewTitle.setText(R.string.filter_category_list_title);
             FilterCategoryAdapter filterCategoryAdapter =
-                    new FilterCategoryAdapter(realm, DataHelper.getAllCategories(realm), true);
+                    new FilterCategoryAdapter(realm);
             recyclerView.setAdapter(filterCategoryAdapter);
         }
 
@@ -82,8 +77,6 @@ public class CategoryDialogFragment extends DialogFragment {
 
         return categoryListView;
     }
-
-
 
 
     @Override

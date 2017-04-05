@@ -1,6 +1,5 @@
 package com.yanko20.blocspot.adapters;
 
-import android.support.annotation.Nullable;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,12 +8,12 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
-import io.realm.OrderedRealmCollection;
+
 import io.realm.Realm;
-import io.realm.RealmRecyclerViewAdapter;
 import io.realm.RealmResults;
 
 /**
@@ -22,14 +21,13 @@ import io.realm.RealmResults;
  */
 
 public class FilterCategoryAdapter extends
-        RealmRecyclerViewAdapter<Category, FilterCategoryAdapter.FilterCategoryHolder> {
+        RecyclerView.Adapter<FilterCategoryAdapter.FilterCategoryHolder> {
 
-    private OrderedRealmCollection<Category> categories;
+    private RealmResults<Category> categories;
     private Realm realm;
 
-    public FilterCategoryAdapter(Realm realm, @Nullable OrderedRealmCollection<Category> categories, boolean autoUpdate) {
-        super(categories, autoUpdate);
-        this.categories = categories;
+    public FilterCategoryAdapter(Realm realm) {
+        this.categories = DataHelper.getAllCategories(realm);
         this.realm = realm;
     }
 
@@ -59,6 +57,11 @@ public class FilterCategoryAdapter extends
         });
         holder.checkBox.setChecked(category.isFilter());
 
+    }
+
+    @Override
+    public int getItemCount() {
+        return categories.size();
     }
 
     public class FilterCategoryHolder extends RecyclerView.ViewHolder {
