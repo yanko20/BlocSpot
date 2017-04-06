@@ -23,7 +23,7 @@ public class DataHelper {
         });
     }
 
-    public static RealmResults<PointOfInterest> getAllPois(Realm realm) {
+    public static RealmResults<PointOfInterest> getAllPois() {
         return realm.where(PointOfInterest.class)
                 .findAll();
     }
@@ -38,16 +38,16 @@ public class DataHelper {
         });
     }
 
-    public static RealmResults<Category> getAllCategories(Realm realm) {
+    public static RealmResults<Category> getAllCategories() {
         return realm.where(Category.class)
                 .findAll();
     }
 
-    public static PointOfInterest getPoi(Realm realm, String id) {
+    public static PointOfInterest getPoi(String id) {
         return realm.where(PointOfInterest.class).equalTo("id", id).findFirst();
     }
 
-    public static void addCategoryToPoi(Realm realm, final PointOfInterest poi, final String categoryName) {
+    public static void addCategoryToPoi(final PointOfInterest poi, final String categoryName) {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -59,7 +59,7 @@ public class DataHelper {
         });
     }
 
-    public static void removeCategoryFromPoi(Realm realm, final PointOfInterest poi, final String categoryName) {
+    public static void removeCategoryFromPoi(final PointOfInterest poi, final String categoryName) {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -72,14 +72,14 @@ public class DataHelper {
         });
     }
 
-    public static boolean isCategoryAssignedToPoi(Realm realm, PointOfInterest poi, String categoryName) {
+    public static boolean isCategoryAssignedToPoi(PointOfInterest poi, String categoryName) {
         Category category = poi.getCategories()
                 .where()
                 .equalTo("name", categoryName).findFirst();
         return category == null ? false : true;
     }
 
-    public static void setCategoryFilter(Realm realm, final Category category, final boolean isFilter){
+    public static void setCategoryFilter(final Category category, final boolean isFilter){
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {

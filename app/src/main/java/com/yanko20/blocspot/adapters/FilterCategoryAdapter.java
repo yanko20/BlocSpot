@@ -27,7 +27,7 @@ public class FilterCategoryAdapter extends
     private Realm realm;
 
     public FilterCategoryAdapter(Realm realm) {
-        this.categories = DataHelper.getAllCategories(realm);
+        this.categories = DataHelper.getAllCategories();
         this.realm = realm;
     }
 
@@ -48,9 +48,9 @@ public class FilterCategoryAdapter extends
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Toast.makeText(holder.checkBox.getContext(), "Filter..", Toast.LENGTH_SHORT).show();
                 if (isChecked) {
-                    DataHelper.setCategoryFilter(realm, category, true);
+                    DataHelper.setCategoryFilter(category, true);
                 } else {
-                    DataHelper.setCategoryFilter(realm, category, false);
+                    DataHelper.setCategoryFilter(category, false);
                 }
 
             }

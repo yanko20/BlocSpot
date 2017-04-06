@@ -38,7 +38,7 @@ public class AddCategoryDialogFragment extends DialogFragment {
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getActivity(), "Adding category..", Toast.LENGTH_SHORT);
                         Category newCategory = new Category(addCategoryEditText.getText().toString());
-                        DataHelper.saveCategory(realm, newCategory);
+                        DataHelper.saveCategory(newCategory);
                     }
                 })
                 .setNegativeButton(R.string.cancel_add_category, new DialogInterface.OnClickListener() {

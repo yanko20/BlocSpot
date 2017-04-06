@@ -32,8 +32,8 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
 
     public CategoryAdapter(String poiId, Realm realm) {
         this.realm = realm;
-        this.dataSet = DataHelper.getAllCategories(this.realm);
-        this.poi = DataHelper.getPoi(realm, poiId);
+        this.dataSet = DataHelper.getAllCategories();
+        this.poi = DataHelper.getPoi(poiId);
     }
 
     @Override
@@ -51,7 +51,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
         Category category = categories[position];
         holder.itemView.setBackgroundColor(category.getColor());
         holder.textView.setText(category.getName());
-        if (DataHelper.isCategoryAssignedToPoi(realm, poi, category.getName())) {
+        if (DataHelper.isCategoryAssignedToPoi(poi, category.getName())) {
             holder.checkBox.setChecked(true);
         }
     }
@@ -91,11 +91,11 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.Catego
                             textView.getText().toString() + " isChecked: " + isChecked, Toast.LENGTH_SHORT).show();
                     String name = textView.getText().toString();
                     if (isChecked) {
-                        if (!DataHelper.isCategoryAssignedToPoi(realm, poi, name)) {
-                            DataHelper.addCategoryToPoi(realm, poi, name);
+                        if (!DataHelper.isCategoryAssignedToPoi(poi, name)) {
+                            DataHelper.addCategoryToPoi(poi, name);
                         }
                     } else {
-                        DataHelper.removeCategoryFromPoi(realm, poi, name);
+                        DataHelper.removeCategoryFromPoi(poi, name);
                     }
                 }
             });

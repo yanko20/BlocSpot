@@ -35,7 +35,7 @@ public class PoiListFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         realm = Realm.getDefaultInstance();
-        RealmResults<PointOfInterest> dataSet = DataHelper.getAllPois(realm);
+        RealmResults<PointOfInterest> dataSet = DataHelper.getAllPois();
 
         adapter = new PoiItemAdapter(dataSet, getActivity().getFragmentManager());
         recyclerView.setAdapter(adapter);

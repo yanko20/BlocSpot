@@ -39,12 +39,10 @@ public class BlocSpotGeofence implements ResultCallback {
     private Circle geoFenceLimits;
     private GoogleApiClient googleApiClient;
     private GoogleMap map;
-    private Realm realm;
 
     public BlocSpotGeofence(GoogleApiClient googleApiClient, GoogleMap map, Realm realm) {
         this.googleApiClient = googleApiClient;
         this.map = map;
-        this.realm = realm;
     }
 
     public Geofence createGeofence(LatLng latlng, String poiId) {
@@ -74,7 +72,8 @@ public class BlocSpotGeofence implements ResultCallback {
             return geofencePendingIntent;
         }
         Intent intent = new Intent(BlocSpotApp.getAppContext(), GeofenceTransitionService.class);
-        return PendingIntent.getService(BlocSpotApp.getAppContext(), GEOFENCE_REQ_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        geofencePendingIntent = PendingIntent.getService(BlocSpotApp.getAppContext(), GEOFENCE_REQ_CODE, intent, PendingIntent.FLAG_UPDATE_CURRENT);
+        return geofencePendingIntent;
     }
 
 
@@ -105,7 +104,7 @@ public class BlocSpotGeofence implements ResultCallback {
         if (geoFenceLimits != null) {
             geoFenceLimits.remove();
         }
-        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois(realm);
+        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois();
         for (PointOfInterest poi : poiList) {
             LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
             CircleOptions circleOptions = new CircleOptions()
@@ -119,7 +118,7 @@ public class BlocSpotGeofence implements ResultCallback {
 
     public void startGeofence() {
         Log.i(BlocSpotApp.TAG, "startGeofence");
-        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois(realm);
+        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois();
         for (PointOfInterest poi : poiList) {
             LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
             Geofence geofence = createGeofence(latLng, poi.getId());
@@ -130,7 +129,7 @@ public class BlocSpotGeofence implements ResultCallback {
 
     public void clearGeofence(){
         Log.i(BlocSpotApp.TAG, "clearGeofence");
-        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois(realm);
+        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois();
         ArrayList<String> poiIdList = new ArrayList<>();
         for (PointOfInterest poi : poiList) {
             poiIdList.add(poi.getId());

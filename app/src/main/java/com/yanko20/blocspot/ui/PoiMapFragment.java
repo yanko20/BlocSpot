@@ -117,7 +117,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     public void onMapReady(GoogleMap map) {
         Log.d(BlocSpotApp.TAG, "onMapReady()");
         PoiMapFragment.map = map;
-        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois(realm);
+        RealmResults<PointOfInterest> poiList = DataHelper.getAllPois();
         for (PointOfInterest poi : poiList) {
             map.addMarker(new MarkerOptions()
                     .position(new LatLng(poi.getLat(), poi.getLng()))

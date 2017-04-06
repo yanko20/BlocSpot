@@ -59,7 +59,7 @@ public class CategoryDialogFragment extends DialogFragment {
                     adapter.notifyDataSetChanged();
                 }
             };
-            DataHelper.getAllCategories(realm).addChangeListener(categoriesChangeListener);
+            DataHelper.getAllCategories().addChangeListener(categoriesChangeListener);
         } else if (mode == FILTER_MODE) {
             categoryListViewTitle.setText(R.string.filter_category_list_title);
             FilterCategoryAdapter filterCategoryAdapter =
