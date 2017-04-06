@@ -12,7 +12,9 @@ import io.realm.RealmResults;
 
 public class DataHelper {
 
-    public static void savePoi(Realm realm, final PointOfInterest poi) {
+    private static Realm realm = Realm.getDefaultInstance();
+
+    public static void savePoi(final PointOfInterest poi) {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {
@@ -26,7 +28,7 @@ public class DataHelper {
                 .findAll();
     }
 
-    public static void saveCategory(Realm realm, final Category category) {
+    public static void saveCategory(final Category category) {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {

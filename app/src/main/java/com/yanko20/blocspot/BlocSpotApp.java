@@ -69,14 +69,11 @@ public class BlocSpotApp extends Application {
         poiKremlin.setLng(37.617499);
 
         // save to database
-        Realm realm = Realm.getDefaultInstance();
-        DataHelper.savePoi(realm, poiMachPichu);
-        DataHelper.savePoi(realm, poiKremlin);
-        DataHelper.saveCategory(realm, new Category("Restaurants"));
-        DataHelper.saveCategory(realm, new Category("Gas Stations"));
-        DataHelper.saveCategory(realm, new Category("Alexandra's Boutiques"));
-        DataHelper.saveCategory(realm, new Category("Alexandra's Fashion Shows"));
-
-        realm.close();
+        DataHelper.savePoi(poiMachPichu);
+        DataHelper.savePoi(poiKremlin);
+        DataHelper.saveCategory(new Category("Restaurants"));
+        DataHelper.saveCategory(new Category("Gas Stations"));
+        DataHelper.saveCategory(new Category("Alexandra's Boutiques"));
+        DataHelper.saveCategory(new Category("Alexandra's Fashion Shows"));
     }
 }
