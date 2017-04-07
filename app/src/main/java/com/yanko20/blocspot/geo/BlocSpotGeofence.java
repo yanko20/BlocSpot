@@ -34,7 +34,7 @@ public class BlocSpotGeofence implements ResultCallback {
     private static final long GEO_DURATION = 60 * 60 * 1000;
     private static final String GEOFENCE_REQ_ID = "My Geofence";
     private final int GEOFENCE_REQ_CODE = 0;
-    private static final float GEOFENCE_RADIUS = 500.0f; // in meters
+    private static final float GEOFENCE_RADIUS = 200.0f; // in meters
     private PendingIntent geofencePendingIntent;
     private Circle geoFenceLimits;
     private GoogleApiClient googleApiClient;

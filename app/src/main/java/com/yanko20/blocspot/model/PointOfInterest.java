@@ -20,6 +20,16 @@ public class PointOfInterest implements RealmModel{
     private double lng;
     private RealmList<Category> categories;
 
+    public PointOfInterest(){}
+
+    public PointOfInterest(String id, String title, String description, double lat, double lng) {
+        this.id = id;
+        this.title = title;
+        this.description = description;
+        this.lat = lat;
+        this.lng = lng;
+    }
+
     public String getId() {
         return id;
     }

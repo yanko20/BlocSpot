@@ -53,27 +53,23 @@ public class BlocSpotApp extends Application {
     }
 
     private static void dataSetup(){
+        PointOfInterest fitLifePoi = new PointOfInterest(
+                UUID.randomUUID().toString(),
+                "FitLife",
+                "Fitness Center",
+                40.059298,
+                -75.190488);
+        PointOfInterest cafeTataPoi = new PointOfInterest(
+                UUID.randomUUID().toString(),
+                "Cafe Tata",
+                "Cafe in Mount Airy",
+                40.060377, -75.191048);
 
-        //create poi data
-        PointOfInterest poiMachPichu = new PointOfInterest();
-        poiMachPichu.setId(UUID.randomUUID().toString());
-        poiMachPichu.setTitle("Machu Picchu");
-        poiMachPichu.setDescription("This is not Kremlin, this is Machu Picchu!");
-        poiMachPichu.setLat(-13.163141);
-        poiMachPichu.setLng(-72.544963);
-        PointOfInterest poiKremlin = new PointOfInterest();
-        poiKremlin.setId(UUID.randomUUID().toString());
-        poiKremlin.setTitle("Kremlin");
-        poiKremlin.setDescription("This is Kremlin!");
-        poiKremlin.setLat(55.752023);
-        poiKremlin.setLng(37.617499);
+        DataHelper.savePoi(fitLifePoi);
+        DataHelper.savePoi(cafeTataPoi);
 
-        // save to database
-        DataHelper.savePoi(poiMachPichu);
-        DataHelper.savePoi(poiKremlin);
-        DataHelper.saveCategory(new Category("Restaurants"));
-        DataHelper.saveCategory(new Category("Gas Stations"));
-        DataHelper.saveCategory(new Category("Alexandra's Boutiques"));
-        DataHelper.saveCategory(new Category("Alexandra's Fashion Shows"));
+        DataHelper.saveCategory(new Category("Fitness Center"));
+        DataHelper.saveCategory(new Category("Restaurant"));
+        DataHelper.saveCategory(new Category("Cafe"));
     }
 }

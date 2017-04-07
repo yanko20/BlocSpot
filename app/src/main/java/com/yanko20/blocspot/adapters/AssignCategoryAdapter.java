@@ -23,14 +23,14 @@ import io.realm.RealmResults;
  */
 
 // todo maybe convert to RealmRecyclerViewAdapter
-public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.CategoryHolder> {
+public class AssignCategoryAdapter extends RecyclerView.Adapter<AssignCategoryAdapter.CategoryHolder> {
 
     private RealmResults<Category> dataSet;
     private Realm realm;
     private PointOfInterest poi;
-    private static final String logTag = "CategoryAdapter.class";
+    private static final String logTag = "AssignCategoryAdapter.class";
 
-    public CategoryAdapter(String poiId, Realm realm) {
+    public AssignCategoryAdapter(String poiId, Realm realm) {
         this.realm = realm;
         this.dataSet = DataHelper.getAllCategories();
         this.poi = DataHelper.getPoi(poiId);

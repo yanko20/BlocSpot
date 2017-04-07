@@ -12,7 +12,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.yanko20.blocspot.R;
-import com.yanko20.blocspot.adapters.CategoryAdapter;
+import com.yanko20.blocspot.adapters.AssignCategoryAdapter;
 import com.yanko20.blocspot.adapters.FilterCategoryAdapter;
 import com.yanko20.blocspot.adapters.PoiItemAdapter;
 import com.yanko20.blocspot.database.DataHelper;
@@ -51,7 +51,7 @@ public class CategoryDialogFragment extends DialogFragment {
         if (mode == ASSIGN_MODE) {
             categoryListViewTitle.setText(R.string.assign_category_list_title);
             String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
-            final CategoryAdapter adapter = new CategoryAdapter(poiId, realm);
+            final AssignCategoryAdapter adapter = new AssignCategoryAdapter(poiId, realm);
             recyclerView.setAdapter(adapter);
             OrderedRealmCollectionChangeListener categoriesChangeListener = new OrderedRealmCollectionChangeListener<RealmResults<Category>>() {
                 @Override
