@@ -3,6 +3,9 @@ package com.yanko20.blocspot.database;
 import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.realm.Realm;
 import io.realm.RealmResults;
 
@@ -26,6 +29,25 @@ public class DataHelper {
     public static RealmResults<PointOfInterest> getAllPois() {
         return realm.where(PointOfInterest.class)
                 .findAll();
+    }
+
+    // TODO: 4/13/2017 figure out how to return RealResults<PointOfInterest>
+    public static List<PointOfInterest> getFilteredPois() {
+        RealmResults<Category> filteredCategories =
+                realm.where(Category.class).equalTo("isFilter", true).findAll();
+
+        RealmResults<PointOfInterest> allPointsOfInterest =
+                realm.where(PointOfInterest.class).findAll();
+
+        List<PointOfInterest> filteredPois = new ArrayList<>();
+
+        for(PointOfInterest poi : allPointsOfInterest){
+            for(Category filtered : filteredCategories)
+            if(poi.getCategories().contains(filtered)){
+                filteredPois.add(poi);
+            }
+        }
+        return filteredPois;
     }
 
     public static void saveCategory(final Category category) {

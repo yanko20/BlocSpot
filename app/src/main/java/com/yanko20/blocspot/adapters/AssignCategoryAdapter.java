@@ -22,13 +22,12 @@ import io.realm.RealmResults;
  * Created by yanko on 3/24/2017.
  */
 
-// todo maybe convert to RealmRecyclerViewAdapter
 public class AssignCategoryAdapter extends RecyclerView.Adapter<AssignCategoryAdapter.CategoryHolder> {
 
     private RealmResults<Category> dataSet;
     private Realm realm;
     private PointOfInterest poi;
-    private static final String logTag = "AssignCategoryAdapter.class";
+    private static final String logTag = "AssignCategoryAdapter.c";
 
     public AssignCategoryAdapter(String poiId, Realm realm) {
         this.realm = realm;
@@ -86,7 +85,6 @@ public class AssignCategoryAdapter extends RecyclerView.Adapter<AssignCategoryAd
             checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                    // todo refactor two functional modes: assign category and filter by category
                     Toast.makeText(buttonView.getContext(),
                             textView.getText().toString() + " isChecked: " + isChecked, Toast.LENGTH_SHORT).show();
                     String name = textView.getText().toString();

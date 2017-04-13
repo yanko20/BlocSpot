@@ -8,9 +8,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.model.PointOfInterest;
-import com.yanko20.blocspot.ui.AddCategoryDialogFragment;
 import com.yanko20.blocspot.ui.CategoryDialogFragment;
 
 import io.realm.RealmResults;
@@ -19,12 +19,13 @@ import io.realm.RealmResults;
  * Created by yanko on 1/13/2017.
  */
 
-public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemViewHolder>{
+public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemViewHolder> {
 
     private RealmResults<PointOfInterest> dataSet;
     private FragmentManager fragmentManager;
+    private static final String logTag = "PoiItemAdapter.class";
 
-    public PoiItemAdapter(RealmResults<PointOfInterest> dataSet, FragmentManager fragmentManager){
+    public PoiItemAdapter(RealmResults<PointOfInterest> dataSet, FragmentManager fragmentManager) {
         this.dataSet = dataSet;
         this.fragmentManager = fragmentManager;
     }
@@ -83,7 +84,7 @@ public class PoiItemAdapter extends RecyclerView.Adapter<PoiItemAdapter.PoiItemV
             });
         }
 
-        public void setId(String poiId){
+        public void setId(String poiId) {
             this.id = poiId;
         }
 

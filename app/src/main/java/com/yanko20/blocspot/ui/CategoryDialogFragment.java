@@ -1,10 +1,12 @@
 package com.yanko20.blocspot.ui;
 
 import android.app.DialogFragment;
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +17,11 @@ import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.AssignCategoryAdapter;
 import com.yanko20.blocspot.adapters.FilterCategoryAdapter;
 import com.yanko20.blocspot.adapters.PoiItemAdapter;
-import com.yanko20.blocspot.database.DataHelper;
-import com.yanko20.blocspot.model.Category;
 
-import io.realm.OrderedCollectionChangeSet;
-import io.realm.OrderedRealmCollectionChangeListener;
+import java.util.ArrayList;
+import java.util.List;
+
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 /**
  * Created by ykomizor on 3/22/2017.
@@ -29,12 +29,16 @@ import io.realm.RealmResults;
 
 public class CategoryDialogFragment extends DialogFragment {
 
+    // TODO: 4/13/2017 delete realm instances
     private Realm realm;
     public static final String DIALOG_TAG = "AddCategoryDialogFragmentTag";
     public static final String logTag = "CategoryDialFrag.class";
     public static final String MODE_KEY = "modeKey";
     public static final String ASSIGN_MODE = "assignMode";
     public static final String FILTER_MODE = "filterMode";
+    private String mode;
+    private static List<FilterCategoryDialogDismissListener> dialogDismissListeners
+            = new ArrayList<>();
 
     @Nullable
     @Override
@@ -47,19 +51,12 @@ public class CategoryDialogFragment extends DialogFragment {
         realm = Realm.getDefaultInstance();
         Bundle bundle = this.getArguments();
 
-        String mode = bundle.getString(MODE_KEY);
+        mode = bundle.getString(MODE_KEY);
         if (mode == ASSIGN_MODE) {
             categoryListViewTitle.setText(R.string.assign_category_list_title);
             String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
             final AssignCategoryAdapter adapter = new AssignCategoryAdapter(poiId, realm);
             recyclerView.setAdapter(adapter);
-            OrderedRealmCollectionChangeListener categoriesChangeListener = new OrderedRealmCollectionChangeListener<RealmResults<Category>>() {
-                @Override
-                public void onChange(RealmResults<Category> collection, OrderedCollectionChangeSet changeSet) {
-                    adapter.notifyDataSetChanged();
-                }
-            };
-            DataHelper.getAllCategories().addChangeListener(categoriesChangeListener);
         } else if (mode == FILTER_MODE) {
             categoryListViewTitle.setText(R.string.filter_category_list_title);
             FilterCategoryAdapter filterCategoryAdapter =
@@ -78,11 +75,37 @@ public class CategoryDialogFragment extends DialogFragment {
         return categoryListView;
     }
 
+    @Override
+    public void onDismiss(DialogInterface dialog) {
+        super.onDismiss(dialog);
+        Log.d(logTag, "CategoryDialogFragment.onDismissFilterCategoryDialog");
+        notifyCategoryDialogDismissListeners();
+    }
+
+    protected static void setCategoryDialogDismissListener(FilterCategoryDialogDismissListener listener) {
+        dialogDismissListeners.add(listener);
+    }
+
+    protected static void removeCategoryDialogDismissListener(FilterCategoryDialogDismissListener listener) {
+        dialogDismissListeners.remove(listener);
+    }
+
+    private void notifyCategoryDialogDismissListeners() {
+        if (mode != null && mode == FILTER_MODE) {
+            for (FilterCategoryDialogDismissListener listener : dialogDismissListeners) {
+                listener.onDismissFilterCategoryDialog();
+            }
+        }
+    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        realm.removeAllChangeListeners();
+        //realm.removeAllChangeListeners();
         realm.close();
     }
+}
+
+interface FilterCategoryDialogDismissListener {
+    void onDismissFilterCategoryDialog();
 }

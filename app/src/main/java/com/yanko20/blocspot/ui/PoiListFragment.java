@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,11 +21,12 @@ import io.realm.RealmResults;
  * Created by yanko on 1/13/2017.
  */
 
-public class PoiListFragment extends Fragment {
+public class PoiListFragment extends Fragment implements FilterCategoryDialogDismissListener {
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
     private Realm realm;
+    private static final String logTag = "PoiListFragment.class";
 
     @Nullable
     @Override
@@ -36,15 +38,31 @@ public class PoiListFragment extends Fragment {
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         realm = Realm.getDefaultInstance();
         RealmResults<PointOfInterest> dataSet = DataHelper.getAllPois();
-
         adapter = new PoiItemAdapter(dataSet, getActivity().getFragmentManager());
         recyclerView.setAdapter(adapter);
+        CategoryDialogFragment.setCategoryDialogDismissListener(this);
         return fragmentListView;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        Log.d(logTag, "onResume");
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
+        CategoryDialogFragment.removeCategoryDialogDismissListener(this);
         realm.close();
+    }
+
+    @Override
+    public void onDismissFilterCategoryDialog() {
+        Log.d(logTag, "onDismissFilterCategoryDialog");
+        // TODO: 4/13/2017 figure out how to update poi list
+        // http://stackoverflow.com/questions/31367599/how-to-update-recyclerview-adapter-data
+        //recyclerView.setAdapter(new PoiItemAdapter(DataHelper.getFilteredPois(), getActivity().getFragmentManager()));
+        //recyclerView.invalidate();
     }
 }
