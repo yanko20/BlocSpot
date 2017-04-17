@@ -109,11 +109,12 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     public void onDestroyView() {
         super.onDestroyView();
     }
-
+    
     @Override
     public void onMapReady(GoogleMap map) {
         Log.d(BlocSpotApp.TAG, "onMapReady()");
         PoiMapFragment.map = map;
+        // TODO: 4/17/2017 add category filter to map 
         RealmResults<PointOfInterest> poiList = DataHelper.getAllPois();
         for (PointOfInterest poi : poiList) {
             map.addMarker(new MarkerOptions()
