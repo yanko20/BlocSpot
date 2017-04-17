@@ -3,10 +3,8 @@ package com.yanko20.blocspot.database;
 import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import io.realm.Realm;
+import io.realm.RealmQuery;
 import io.realm.RealmResults;
 
 /**
@@ -31,24 +29,21 @@ public class DataHelper {
                 .findAll();
     }
 
-    // TODO: 4/13/2017 figure out how to return RealResults<PointOfInterest>
-    public static List<PointOfInterest> getFilteredPois() {
+    public static RealmResults<PointOfInterest> getFilteredPois() {
         RealmResults<Category> filteredCategories =
-                realm.where(Category.class).equalTo("isFilter", true).findAll();
-
-        RealmResults<PointOfInterest> allPointsOfInterest =
-                realm.where(PointOfInterest.class).findAll();
-
-        List<PointOfInterest> filteredPois = new ArrayList<>();
-
-        for(PointOfInterest poi : allPointsOfInterest){
-            for(Category filtered : filteredCategories)
-            if(poi.getCategories().contains(filtered)){
-                filteredPois.add(poi);
-            }
+                getFilteredCategories();
+        RealmQuery<PointOfInterest> poiQuery = realm.where(PointOfInterest.class);
+        poiQuery.beginGroup().equalTo("categories.name", filteredCategories.get(0).getName());
+        for (int i = 1; i < filteredCategories.size(); i++) {
+            poiQuery.or().equalTo("categories.name", filteredCategories.get(i).getName());
         }
-        return filteredPois;
+        return poiQuery.endGroup().findAll();
     }
+
+    public static RealmResults<Category> getFilteredCategories() {
+        return realm.where(Category.class).equalTo("isFilter", true).findAll();
+    }
+
 
     public static void saveCategory(final Category category) {
         realm.executeTransaction(new Realm.Transaction() {
@@ -101,7 +96,7 @@ public class DataHelper {
         return category == null ? false : true;
     }
 
-    public static void setCategoryFilter(final Category category, final boolean isFilter){
+    public static void setCategoryFilter(final Category category, final boolean isFilter) {
         realm.executeTransaction(new Realm.Transaction() {
             @Override
             public void execute(Realm realm) {

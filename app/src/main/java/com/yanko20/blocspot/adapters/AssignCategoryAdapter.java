@@ -15,7 +15,6 @@ import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
 
-import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
@@ -25,12 +24,10 @@ import io.realm.RealmResults;
 public class AssignCategoryAdapter extends RecyclerView.Adapter<AssignCategoryAdapter.CategoryHolder> {
 
     private RealmResults<Category> dataSet;
-    private Realm realm;
     private PointOfInterest poi;
     private static final String logTag = "AssignCategoryAdapter.c";
 
-    public AssignCategoryAdapter(String poiId, Realm realm) {
-        this.realm = realm;
+    public AssignCategoryAdapter(String poiId) {
         this.dataSet = DataHelper.getAllCategories();
         this.poi = DataHelper.getPoi(poiId);
     }

@@ -40,7 +40,7 @@ public class BlocSpotGeofence implements ResultCallback {
     private GoogleApiClient googleApiClient;
     private GoogleMap map;
 
-    public BlocSpotGeofence(GoogleApiClient googleApiClient, GoogleMap map, Realm realm) {
+    public BlocSpotGeofence(GoogleApiClient googleApiClient, GoogleMap map) {
         this.googleApiClient = googleApiClient;
         this.map = map;
     }

@@ -21,16 +21,12 @@ import com.yanko20.blocspot.adapters.PoiItemAdapter;
 import java.util.ArrayList;
 import java.util.List;
 
-import io.realm.Realm;
-
 /**
  * Created by ykomizor on 3/22/2017.
  */
 
 public class CategoryDialogFragment extends DialogFragment {
 
-    // TODO: 4/13/2017 delete realm instances
-    private Realm realm;
     public static final String DIALOG_TAG = "AddCategoryDialogFragmentTag";
     public static final String logTag = "CategoryDialFrag.class";
     public static final String MODE_KEY = "modeKey";
@@ -46,22 +42,18 @@ public class CategoryDialogFragment extends DialogFragment {
         View categoryListView = inflater.inflate(R.layout.category_list, container);
         TextView categoryListViewTitle = (TextView) categoryListView.findViewById(R.id.category_list_view_title);
         ImageButton addCategoryButton = (ImageButton) categoryListView.findViewById(R.id.add_category_button);
-        RecyclerView recyclerView = (RecyclerView) categoryListView.findViewById(R.id.category_list_recycler_view);
+        final RecyclerView recyclerView = (RecyclerView) categoryListView.findViewById(R.id.category_list_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this.getActivity()));
-        realm = Realm.getDefaultInstance();
         Bundle bundle = this.getArguments();
 
         mode = bundle.getString(MODE_KEY);
         if (mode == ASSIGN_MODE) {
             categoryListViewTitle.setText(R.string.assign_category_list_title);
             String poiId = bundle.getString(PoiItemAdapter.PoiItemViewHolder.POI_ID_KEY);
-            final AssignCategoryAdapter adapter = new AssignCategoryAdapter(poiId, realm);
-            recyclerView.setAdapter(adapter);
+            recyclerView.setAdapter(new AssignCategoryAdapter(poiId));
         } else if (mode == FILTER_MODE) {
             categoryListViewTitle.setText(R.string.filter_category_list_title);
-            FilterCategoryAdapter filterCategoryAdapter =
-                    new FilterCategoryAdapter(realm);
-            recyclerView.setAdapter(filterCategoryAdapter);
+            recyclerView.setAdapter(new FilterCategoryAdapter());
         }
 
         addCategoryButton.setOnClickListener(new View.OnClickListener() {
@@ -71,7 +63,6 @@ public class CategoryDialogFragment extends DialogFragment {
                         .show(getFragmentManager(), AddCategoryDialogFragment.DIALOG_TAG);
             }
         });
-
         return categoryListView;
     }
 
@@ -101,8 +92,6 @@ public class CategoryDialogFragment extends DialogFragment {
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        //realm.removeAllChangeListeners();
-        realm.close();
     }
 }
 

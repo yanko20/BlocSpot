@@ -24,7 +24,6 @@ import io.realm.Realm;
 
 public class AddCategoryDialogFragment extends DialogFragment {
 
-    private Realm realm;
     public static final String DIALOG_TAG = "AddCategoryDialogFragmentTag";
 
     @Override
@@ -53,13 +52,11 @@ public class AddCategoryDialogFragment extends DialogFragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        realm = Realm.getDefaultInstance();
         return super.onCreateView(inflater, container, savedInstanceState);
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        realm.close();
     }
 }

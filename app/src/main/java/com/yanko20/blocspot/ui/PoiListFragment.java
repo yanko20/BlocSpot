@@ -25,7 +25,6 @@ public class PoiListFragment extends Fragment implements FilterCategoryDialogDis
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
-    private Realm realm;
     private static final String logTag = "PoiListFragment.class";
 
     @Nullable
@@ -36,7 +35,6 @@ public class PoiListFragment extends Fragment implements FilterCategoryDialogDis
         recyclerView = (RecyclerView) fragmentListView.findViewById(R.id.poi_list_recycler_view);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        realm = Realm.getDefaultInstance();
         RealmResults<PointOfInterest> dataSet = DataHelper.getAllPois();
         adapter = new PoiItemAdapter(dataSet, getActivity().getFragmentManager());
         recyclerView.setAdapter(adapter);
@@ -54,15 +52,17 @@ public class PoiListFragment extends Fragment implements FilterCategoryDialogDis
     public void onDestroyView() {
         super.onDestroyView();
         CategoryDialogFragment.removeCategoryDialogDismissListener(this);
-        realm.close();
     }
 
     @Override
     public void onDismissFilterCategoryDialog() {
-        Log.d(logTag, "onDismissFilterCategoryDialog");
-        // TODO: 4/13/2017 figure out how to update poi list
-        // http://stackoverflow.com/questions/31367599/how-to-update-recyclerview-adapter-data
-        //recyclerView.setAdapter(new PoiItemAdapter(DataHelper.getFilteredPois(), getActivity().getFragmentManager()));
-        //recyclerView.invalidate();
+        if(DataHelper.getFilteredCategories().size() == 0){
+            recyclerView.setAdapter(adapter);
+            recyclerView.invalidate();
+        }
+        else{
+            recyclerView.setAdapter(new PoiItemAdapter(DataHelper.getFilteredPois(), getActivity().getFragmentManager()));
+            recyclerView.invalidate();
+        }
     }
 }

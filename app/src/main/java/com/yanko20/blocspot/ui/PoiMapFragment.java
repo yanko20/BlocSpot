@@ -57,7 +57,6 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     private static boolean isCenteredToCurrentLocation = false;
 
     private static GoogleMap map;
-    private Realm realm;
 
 
     @Override
@@ -103,14 +102,12 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
         mapView.onCreate(savedInstanceState);
         mapView.onResume();
         mapView.getMapAsync(this);
-        realm = Realm.getDefaultInstance();
         return view;
     }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        realm.close();
     }
 
     @Override
@@ -182,7 +179,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     public void onConnected(@Nullable Bundle bundle) {
         Log.v(BlocSpotApp.TAG, "GoogleApiClient onConnected()");
         getLastKnownLocation();
-        BlocSpotGeofence blocSpotGeofence = new BlocSpotGeofence(googleApiClient, map, realm);
+        BlocSpotGeofence blocSpotGeofence = new BlocSpotGeofence(googleApiClient, map);
         blocSpotGeofence.clearGeofence();
         blocSpotGeofence.startGeofence();
     }

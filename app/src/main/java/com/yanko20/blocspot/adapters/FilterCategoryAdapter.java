@@ -13,7 +13,6 @@ import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
 
-import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**
@@ -24,11 +23,9 @@ public class FilterCategoryAdapter extends
         RecyclerView.Adapter<FilterCategoryAdapter.FilterCategoryHolder> {
 
     private RealmResults<Category> categories;
-    private Realm realm;
 
-    public FilterCategoryAdapter(Realm realm) {
+    public FilterCategoryAdapter() {
         this.categories = DataHelper.getAllCategories();
-        this.realm = realm;
     }
 
     @Override
