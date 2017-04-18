@@ -32,6 +32,7 @@ public class DataHelper {
     public static RealmResults<PointOfInterest> getFilteredPois() {
         RealmResults<Category> filteredCategories =
                 getFilteredCategories();
+        if(filteredCategories.size() == 0) return getAllPois();
         RealmQuery<PointOfInterest> poiQuery = realm.where(PointOfInterest.class);
         poiQuery.beginGroup().equalTo("categories.name", filteredCategories.get(0).getName());
         for (int i = 1; i < filteredCategories.size(); i++) {

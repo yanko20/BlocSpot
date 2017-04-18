@@ -33,7 +33,8 @@ import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.geo.BlocSpotGeofence;
 import com.yanko20.blocspot.model.PointOfInterest;
 
-import io.realm.Realm;
+import java.util.ArrayList;
+
 import io.realm.RealmResults;
 
 import static android.content.ContentValues.TAG;
@@ -42,11 +43,12 @@ import static android.content.ContentValues.TAG;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class PoiMapFragment extends Fragment implements OnMapReadyCallback, LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
+public class PoiMapFragment extends Fragment implements OnMapReadyCallback, LocationListener, GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener, FilterCategoryDialogDismissListener {
 
+    public static final String logTag = "PoiMapFragment.class";
     MapView mapView;
     private GoogleApiClient googleApiClient;
-    private static Marker locationMarker;
+    private ArrayList<Marker> markers = new ArrayList<>();
     private Location location;
     private LocationRequest locationRequest;
     public static final int REQ_PERMISSION = 1;
@@ -66,7 +68,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     }
 
     public GoogleApiClient createGoogleApi() {
-        Log.v(BlocSpotApp.TAG, "createGoogleApi()");
+        Log.v(logTag, "createGoogleApi()");
         if (googleApiClient == null) {
             googleApiClient = new GoogleApiClient.Builder(getContext())
                     .addConnectionCallbacks(this)
@@ -109,24 +111,26 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     public void onDestroyView() {
         super.onDestroyView();
     }
-    
+
     @Override
     public void onMapReady(GoogleMap map) {
-        Log.d(BlocSpotApp.TAG, "onMapReady()");
+        Log.d(logTag, "onMapReady()");
         PoiMapFragment.map = map;
-        // TODO: 4/17/2017 add category filter to map 
         RealmResults<PointOfInterest> poiList = DataHelper.getAllPois();
         for (PointOfInterest poi : poiList) {
+            Marker marker =
             map.addMarker(new MarkerOptions()
                     .position(new LatLng(poi.getLat(), poi.getLng()))
                     .title(poi.getTitle()));
+            markers.add(marker);
         }
         mapAndLocationReady(map, location);
+        CategoryDialogFragment.setCategoryDialogDismissListener(this);
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        Log.d(BlocSpotApp.TAG, "onRequestPermissionsResult()");
+        Log.d(logTag, "onRequestPermissionsResult()");
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
             case REQ_PERMISSION: {
@@ -144,7 +148,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     }
 
     public void permissionsDenied() {
-        Log.w(BlocSpotApp.TAG, "permissionsDenied()");
+        Log.w(logTag, "permissionsDenied()");
     }
 
     public void mapAndLocationReady(GoogleMap map, Location location) {
@@ -178,7 +182,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
-        Log.v(BlocSpotApp.TAG, "GoogleApiClient onConnected()");
+        Log.v(logTag, "GoogleApiClient onConnected()");
         getLastKnownLocation();
         BlocSpotGeofence blocSpotGeofence = new BlocSpotGeofence(googleApiClient, map);
         blocSpotGeofence.clearGeofence();
@@ -186,15 +190,15 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     }
 
     public void getLastKnownLocation() {
-        Log.d(BlocSpotApp.TAG, "getLastKnownLocation()");
+        Log.d(logTag, "getLastKnownLocation()");
         if (BlocSpotApp.checkPermission()) {
             location = LocationServices.FusedLocationApi.getLastLocation(googleApiClient);
             if (location != null) {
-                Log.i(BlocSpotApp.TAG, "LasKnown location. " +
+                Log.i(logTag, "LasKnown location. " +
                         "Long: " + location.getLongitude() +
                         " | Lat: " + location.getLatitude());
             } else {
-                Log.w(BlocSpotApp.TAG, "No location retrieved yet");
+                Log.w(logTag, "No location retrieved yet");
             }
             startLocationUpdates();
         } else askPermission();
@@ -210,7 +214,7 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
     }
 
     private void startLocationUpdates() {
-        Log.i(BlocSpotApp.TAG, "startLocationUpdates()");
+        Log.i(logTag, "startLocationUpdates()");
         locationRequest = LocationRequest.create()
                 .setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY)
                 .setInterval(UPDATE_INTERVAL)
@@ -219,16 +223,40 @@ public class PoiMapFragment extends Fragment implements OnMapReadyCallback, Loca
         if (BlocSpotApp.checkPermission()) {
             LocationServices.FusedLocationApi.requestLocationUpdates(googleApiClient, locationRequest, this);
         }
-
     }
 
     @Override
     public void onConnectionSuspended(int i) {
-        Log.v(BlocSpotApp.TAG, "GoogleApiClient onConnectionSuspended()");
+        Log.v(logTag, "GoogleApiClient onConnectionSuspended()");
     }
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.v(BlocSpotApp.TAG, "GoogleApiClient onConnectionFailed()");
+        Log.v(logTag, "GoogleApiClient onConnectionFailed()");
+    }
+
+    @Override
+    public void onDismissFilterCategoryDialog() {
+        RealmResults<PointOfInterest> poiList = DataHelper.getFilteredPois();
+        removeMarkers();
+        for (PointOfInterest poi : poiList) {
+            Marker marker =
+            map.addMarker(new MarkerOptions()
+                    .position(new LatLng(poi.getLat(), poi.getLng()))
+                    .title(poi.getTitle()));
+            markers.add(marker);
+        }
+    }
+
+    private void removeMarkers(){
+        for(Marker marker : markers){
+            marker.remove();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        CategoryDialogFragment.removeCategoryDialogDismissListener(this);
     }
 }

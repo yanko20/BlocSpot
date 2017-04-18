@@ -16,6 +16,7 @@ import com.google.android.gms.location.Geofence;
 import com.google.android.gms.location.GeofenceStatusCodes;
 import com.google.android.gms.location.GeofencingEvent;
 import com.yanko20.blocspot.BlocSpotApp;
+import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.ui.MainActivity;
 
 import java.util.ArrayList;
@@ -80,7 +81,6 @@ public class GeofenceTransitionService extends IntentService {
         return status + TextUtils.join(", ", triggeringGeofencesList);
     }
 
-    // Send a nnotification
     private void sendNotification(String msg){
         Log.i(BlocSpotApp.TAG, "sendNotification");
 
@@ -104,7 +104,7 @@ public class GeofenceTransitionService extends IntentService {
         NotificationCompat.Builder notificationBuilder =
                 new NotificationCompat.Builder(this);
         notificationBuilder
-                .setSmallIcon(com.google.android.gms.R.drawable.cast_ic_notification_small_icon)
+                .setSmallIcon(R.drawable.ic_map_marker_radius_white_24dp)
                 .setColor(Color.RED)
                 .setContentTitle(msg)
                 .setContentText("Geofence Notification!")

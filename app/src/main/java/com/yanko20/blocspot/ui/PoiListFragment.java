@@ -56,13 +56,10 @@ public class PoiListFragment extends Fragment implements FilterCategoryDialogDis
 
     @Override
     public void onDismissFilterCategoryDialog() {
-        if(DataHelper.getFilteredCategories().size() == 0){
-            recyclerView.setAdapter(adapter);
+            recyclerView.setAdapter(
+                    new PoiItemAdapter(DataHelper.getFilteredPois(),
+                            getActivity().getFragmentManager())
+            );
             recyclerView.invalidate();
-        }
-        else{
-            recyclerView.setAdapter(new PoiItemAdapter(DataHelper.getFilteredPois(), getActivity().getFragmentManager()));
-            recyclerView.invalidate();
-        }
     }
 }

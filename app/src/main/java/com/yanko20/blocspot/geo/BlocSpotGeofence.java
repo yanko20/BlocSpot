@@ -109,6 +109,7 @@ public class BlocSpotGeofence implements ResultCallback {
             LatLng latLng = new LatLng(poi.getLat(), poi.getLng());
             CircleOptions circleOptions = new CircleOptions()
                     .center(latLng)
+                    .strokeWidth(5)
                     .strokeColor(Color.argb(50, 70, 70, 70))
                     .fillColor(Color.argb(100, 150, 150, 150))
                     .radius(GEOFENCE_RADIUS);

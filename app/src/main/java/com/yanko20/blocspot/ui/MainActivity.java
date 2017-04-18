@@ -17,9 +17,11 @@ import com.yanko20.blocspot.adapters.PoiFragmentPageAdapter;
 
 public class MainActivity extends AppCompatActivity {
 
+    private static final String logtag = "MainActivity.class";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.v(BlocSpotApp.TAG, "MainActivity.onCreate()");
+        Log.v(logtag, "MainActivity.onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -38,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId() == R.id.filter){
+        if (item.getItemId() == R.id.filter) {
             Bundle bundle = new Bundle();
             bundle.putString(CategoryDialogFragment.MODE_KEY,
                     CategoryDialogFragment.FILTER_MODE);
@@ -49,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public static Intent makeNotificationIntent(Context geofenceService, String msg){
+    public static Intent makeNotificationIntent(Context geofenceService, String msg) {
         Log.d(BlocSpotApp.TAG, "makeNotificationIntent msg: " + msg);
         return new Intent(geofenceService, MainActivity.class);
     }
