@@ -7,4 +7,5 @@
     <string name="filter_category_list_title">Filter by category</string>
     <string name="add_category">ADD</string>
     <string name="cancel_add_category">CANCEL</string>
+    <string name="hint">hint</string>
 </resources>
