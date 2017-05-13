@@ -61,3 +61,4 @@ public class MainActivity extends AppCompatActivity {
         return new Intent(geofenceService, MainActivity.class);
     }
 }
+
