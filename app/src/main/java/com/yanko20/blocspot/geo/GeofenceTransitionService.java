@@ -17,7 +17,7 @@ import com.google.android.gms.location.GeofenceStatusCodes;
 import com.google.android.gms.location.GeofencingEvent;
 import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
-import com.yanko20.blocspot.ui.MainActivity;
+import com.yanko20.blocspot.ui.activity.MainActivity;
 
 import java.util.ArrayList;
 import java.util.List;

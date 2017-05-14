@@ -1,4 +1,4 @@
-package com.yanko20.blocspot.ui;
+package com.yanko20.blocspot.ui.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,8 +13,9 @@ import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.adapters.PoiItemAdapter;
 import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.PointOfInterest;
+import com.yanko20.blocspot.ui.fragment.CategoryDialogFragment;
+import com.yanko20.blocspot.ui.fragment.FilterCategoryDialogDismissListener;
 
-import io.realm.Realm;
 import io.realm.RealmResults;
 
 /**

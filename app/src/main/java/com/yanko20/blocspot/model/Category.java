@@ -1,6 +1,6 @@
 package com.yanko20.blocspot.model;
 
-import com.yanko20.blocspot.ui.UIUtils;
+import com.yanko20.blocspot.ui.utils.UIUtils;
 
 import io.realm.RealmModel;
 import io.realm.annotations.PrimaryKey;

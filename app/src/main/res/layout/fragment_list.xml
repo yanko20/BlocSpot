@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="200dp"
-    tools:context="com.yanko20.blocspot.ui.PoiListFragment">
+    tools:context="com.yanko20.blocspot.ui.fragment.PoiListFragment">
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/poi_list_recycler_view"

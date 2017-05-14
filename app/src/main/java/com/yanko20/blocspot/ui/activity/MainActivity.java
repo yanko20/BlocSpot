@@ -1,4 +1,4 @@
-package com.yanko20.blocspot.ui;
+package com.yanko20.blocspot.ui.activity;
 
 import android.app.SearchManager;
 import android.content.Context;
@@ -19,6 +19,7 @@ import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.YelpApi;
 import com.yanko20.blocspot.adapters.PoiFragmentPageAdapter;
+import com.yanko20.blocspot.ui.fragment.CategoryDialogFragment;
 
 public class MainActivity extends AppCompatActivity {
 

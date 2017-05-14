@@ -1,4 +1,4 @@
-package com.yanko20.blocspot.ui;
+package com.yanko20.blocspot.ui.fragment;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

@@ -9,7 +9,6 @@ import android.util.Log;
 import com.yanko20.blocspot.database.DataHelper;
 import com.yanko20.blocspot.model.Category;
 import com.yanko20.blocspot.model.PointOfInterest;
-import com.yanko20.blocspot.ui.UIUtils;
 
 import java.util.UUID;
 
@@ -72,4 +71,6 @@ public class BlocSpotApp extends Application {
         DataHelper.saveCategory(new Category("Restaurant"));
         DataHelper.saveCategory(new Category("Cafe"));
     }
+
+    private static setupYelpApi()
 }

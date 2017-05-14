@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.yanko20.blocspot.R;
 import com.yanko20.blocspot.model.PointOfInterest;
-import com.yanko20.blocspot.ui.CategoryDialogFragment;
+import com.yanko20.blocspot.ui.fragment.CategoryDialogFragment;
 
 import io.realm.RealmResults;
 

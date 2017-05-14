@@ -15,7 +15,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import retrofit2.Call;
-import retrofit2.Callback;
 import retrofit2.Response;
 
 /**
@@ -29,7 +28,7 @@ public class YelpApi {
     private static final String clientSecret = "SBgKN1iQHjzmyftXj7LnluX9KEHhncPr3dwIIyckPjbBGwAU9AGNXLh1TwOpAuiz";
     private YelpFusionApi yelpFusionApi;
 
-    public YelpApi(){
+    public YelpApi() {
         final YelpFusionApiFactory apiFactory = new YelpFusionApiFactory();
 
         new AsyncTask<String, Void, String>() {
@@ -37,14 +36,17 @@ public class YelpApi {
             protected String doInBackground(String... strings) {
                 Log.d(logTag, "doInBackground");
                 try {
-                    yelpFusionApi = apiFactory.createAPI(clientId, clientSecret);
+
+
+
+                     = apiFactory.createAPI(clientId, clientSecret);
                     Map<String, String> params = new HashMap<>();
                     params.put("term", "indian food");
                     params.put("location", "New York");
                     Call<SearchResponse> call = yelpFusionApi.getBusinessSearch(params);
                     Response<SearchResponse> response = call.execute();
                     ArrayList<Business> businesses = response.body().getBusinesses();
-                    for(Business business : businesses){
+                    for (Business business : businesses) {
                         Log.d(logTag, "Business: " + business.getName());
                     }
 

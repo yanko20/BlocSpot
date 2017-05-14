@@ -4,8 +4,8 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.yanko20.blocspot.ui.PoiListFragment;
-import com.yanko20.blocspot.ui.PoiMapFragment;
+import com.yanko20.blocspot.ui.fragment.PoiListFragment;
+import com.yanko20.blocspot.ui.fragment.PoiMapFragment;
 
 /**
  * Created by Yan Komizorov on 1/8/2017.

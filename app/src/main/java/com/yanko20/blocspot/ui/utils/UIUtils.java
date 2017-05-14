@@ -1,4 +1,4 @@
-package com.yanko20.blocspot.ui;
+package com.yanko20.blocspot.ui.utils;
 
 import android.support.v4.content.ContextCompat;
 
