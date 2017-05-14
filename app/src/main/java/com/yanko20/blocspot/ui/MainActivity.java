@@ -17,6 +17,7 @@ import android.widget.Toast;
 
 import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
+import com.yanko20.blocspot.YelpApi;
 import com.yanko20.blocspot.adapters.PoiFragmentPageAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         viewPager.setAdapter(new PoiFragmentPageAdapter(getSupportFragmentManager()));
         TabLayout tabLayout = (TabLayout) findViewById(R.id.sliding_tabs);
         tabLayout.setupWithViewPager(viewPager);
+        YelpApi yelpApi = new YelpApi();
     }
 
     @Override
