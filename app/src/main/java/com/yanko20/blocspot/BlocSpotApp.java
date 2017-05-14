@@ -72,5 +72,5 @@ public class BlocSpotApp extends Application {
         DataHelper.saveCategory(new Category("Cafe"));
     }
 
-    private static setupYelpApi()
+
 }

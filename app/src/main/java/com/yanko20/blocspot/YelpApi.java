@@ -36,10 +36,7 @@ public class YelpApi {
             protected String doInBackground(String... strings) {
                 Log.d(logTag, "doInBackground");
                 try {
-
-
-
-                     = apiFactory.createAPI(clientId, clientSecret);
+                    yelpFusionApi = apiFactory.createAPI(clientId, clientSecret);
                     Map<String, String> params = new HashMap<>();
                     params.put("term", "indian food");
                     params.put("location", "New York");
