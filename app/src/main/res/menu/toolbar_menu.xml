@@ -13,6 +13,6 @@
         android:id="@+id/filter"
         android:icon="@drawable/ic_filter_list_black_24dp"
         android:title="@string/filter"
-        app:showAsAction="ifRoom"/>
+        app:showAsAction="always"/>
 
 </menu>

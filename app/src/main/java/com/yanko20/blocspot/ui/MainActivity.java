@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
@@ -12,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.yanko20.blocspot.BlocSpotApp;
 import com.yanko20.blocspot.R;
@@ -26,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         Log.v(logtag, "MainActivity.onCreate()");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        handleIntent(getIntent());
         Toolbar toolbar = (Toolbar) findViewById(R.id.blocspot_toolbar);
         setSupportActionBar(toolbar);
         ViewPager viewPager = (ViewPager) findViewById(R.id.view_pager);
@@ -38,8 +41,25 @@ public class MainActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.toolbar_menu, menu);
         SearchManager searchManager = (SearchManager) getSystemService(Context.SEARCH_SERVICE);
-        SearchView searchView = (SearchView) menu.findItem(R.id.search).getActionView();
+        MenuItem searchMenuItem = menu.findItem(R.id.search);
+        SearchView searchView = (SearchView) searchMenuItem.getActionView();
         searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
+        final MenuItem filterMenuItem = menu.findItem(R.id.filter);
+        MenuItemCompat.setOnActionExpandListener(searchMenuItem, new MenuItemCompat.OnActionExpandListener() {
+            @Override
+            public boolean onMenuItemActionExpand(MenuItem menuItem) {
+                filterMenuItem.setVisible(false);
+                return true;
+            }
+
+            @Override
+            public boolean onMenuItemActionCollapse(MenuItem menuItem) {
+                filterMenuItem.setVisible(true);
+                return true;
+            }
+        });
+
+
         return true;
     }
 
@@ -60,5 +80,19 @@ public class MainActivity extends AppCompatActivity {
         Log.d(BlocSpotApp.TAG, "makeNotificationIntent msg: " + msg);
         return new Intent(geofenceService, MainActivity.class);
     }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
+            String query = intent.getStringExtra(SearchManager.QUERY);
+            Toast.makeText(this, "Search query: " + query, Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
 
