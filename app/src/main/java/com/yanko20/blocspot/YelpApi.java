@@ -17,11 +17,21 @@ import java.util.Map;
 import retrofit2.Call;
 import retrofit2.Response;
 
-/**
- * Created by yanko on 5/14/2017.
+// TODO: 5/14/2017
+/*
+Start app
+    BlockSpotApp class
+        setupYelp() - getYelpApi
+            start in background with Async
+            notify listeners when Finished
+    ManiActivity class
+        onFinish() - listener
+            search icon visible = true - if icon available
+        onCreateOptionsMenu()
+            listen to search text input and return results for every character
+    Create new fragment to display search results in list dynamically
  */
 
-// Client ID: BlocSpot
 public class YelpApi {
     private static final String logTag = YelpApi.class.getSimpleName();
     private static final String clientId = "F8WWmkqzwz9BiKtu89gnVg";
@@ -35,6 +45,9 @@ public class YelpApi {
             @Override
             protected String doInBackground(String... strings) {
                 Log.d(logTag, "doInBackground");
+
+
+
                 try {
                     yelpFusionApi = apiFactory.createAPI(clientId, clientSecret);
                     Map<String, String> params = new HashMap<>();
