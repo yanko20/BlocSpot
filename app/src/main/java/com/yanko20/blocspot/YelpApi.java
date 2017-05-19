@@ -31,6 +31,13 @@ Start app
             listen to search text input and return results for every character
     Create new fragment to display search results in list dynamically
  */
+// format: x-www-form-urlencoded
+//{
+//        "grant_type": "client_credentials",
+//        "client_id": "F8WWmkqzwz9BiKtu89gnVg",
+//        "client_secret": "SBgKN1iQHjzmyftXj7LnluX9KEHhncPr3dwIIyckPjbBGwAU9AGNXLh1TwOpAuiz"
+//}
+// todo https://developer.android.com/training/volley/simple.html#simple
 
 public class YelpApi {
     private static final String logTag = YelpApi.class.getSimpleName();
